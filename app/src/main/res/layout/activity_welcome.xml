@@ -5,13 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
+    android:padding="30dp"
     android:orientation="vertical"
     tools:context=".WelcomeActivity">
 
     <ImageView
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ilus7_dompetku"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ilus7-dompetku.png"/>
+        android:text="Jadikan dompetku menjadi dompet digital nomer satu anda!"
+        android:textColor="@color/primary"
+        android:textSize="35sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold" />
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_stroke_primary"
+        android:textSize="16sp"
+        android:textColor="@color/primary"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Create an Account"
+        android:background="@drawable/bg_primary"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textAllCaps="false"/>
 
 </LinearLayout>
