@@ -22,14 +22,14 @@
         android:text="Jadikan dompetku menjadi dompet digital nomer satu anda!"
         android:textColor="@color/primary"
         android:textSize="35sp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold" />
     
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign In"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_stroke_primary"
         android:textSize="16sp"
         android:textColor="@color/primary"

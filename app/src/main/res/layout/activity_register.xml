@@ -47,6 +47,7 @@
             android:layout_marginBottom="15dp"
             android:hint="Nama Lengkap"
             android:textColorHint="@color/primary"
+            android:textSize="16sp"
             android:background="@drawable/bg_stroke_primary"/>
 
         <EditText
@@ -56,15 +57,17 @@
             android:layout_marginBottom="15dp"
             android:hint="No Hp"
             android:textColorHint="@color/primary"
+            android:textSize="16sp"
             android:background="@drawable/bg_stroke_primary"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingStart="12sp"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textColorHint="@color/primary"
+            android:textSize="16sp"
             android:background="@drawable/bg_stroke_primary"/>
 
     </LinearLayout>
