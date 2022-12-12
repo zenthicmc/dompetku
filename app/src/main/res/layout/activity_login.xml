@@ -47,6 +47,7 @@
             android:layout_marginBottom="15dp"
             android:hint="No Hp"
             android:textColorHint="@color/primary"
+            android:textSize="16sp"
             android:background="@drawable/bg_stroke_primary"/>
 
         <EditText
@@ -55,6 +56,7 @@
             android:paddingStart="12sp"
             android:hint="Password"
             android:textColorHint="@color/primary"
+            android:textSize="16sp"
             android:background="@drawable/bg_stroke_primary"/>
 
     </LinearLayout>
