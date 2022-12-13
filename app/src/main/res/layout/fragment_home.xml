@@ -239,14 +239,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="end"
                 android:text="Berhasil"
                 android:textColor="@color/hijau"
                 android:textStyle="bold"
                 android:textSize="13sp" />
         </LinearLayout>
-
-
 
     </LinearLayout>
 
@@ -304,7 +302,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="end"
                 android:text="Berhasil"
                 android:textColor="@color/hijau"
                 android:textStyle="bold"
