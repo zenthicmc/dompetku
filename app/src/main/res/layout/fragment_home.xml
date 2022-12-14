@@ -10,61 +10,52 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:background="@drawable/bg_primary"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_home_primary"
         android:backgroundTint="@color/primary"
+        android:paddingHorizontal="30dp"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
+        <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginEnd="200dp"
-                    android:text="Halo! Kaesang"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end"
-                    android:src="@drawable/model_ssst4" />
-
-            </LinearLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center"
-            android:background="@drawable/bg_stroke_primary"
-            android:layout_marginBottom="35dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="12dp">
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
+                android:text="Halo, Kaesang!"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/model_ssst4" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_home_saldo"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:padding="25dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="150dp"
                     android:text="Saldomu"
                     android:textColor="@color/primary"
                     android:textSize="20dp"
@@ -73,22 +64,23 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_eye" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/txtRp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="25dp"
+                    android:layout_marginEnd="5dp"
                     android:text="Rp "
                     android:textSize="35dp"
+                    android:textColor="@color/gray"
                     android:textStyle="bold" />
 
                 <TextView
@@ -97,24 +89,25 @@
                     android:text="3.222.000"
                     android:textColor="@color/primary"
                     android:textSize="35dp"
+                    android:layout_toRightOf="@id/txtRp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
+                android:id="@+id/btnDeposit"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="45dp"
                 android:background="@drawable/bg_depo">
 
                 <ImageView
@@ -126,16 +119,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Deposit"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnTransfer"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="50dp"
                 android:background="@drawable/bg_trans"
                 android:gravity="center"
+                android:layout_centerHorizontal="true"
                 android:orientation="vertical">
 
                 <ImageView
@@ -147,14 +142,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Transaksi"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnWithdraw"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_alignParentEnd="true"
                 android:background="@drawable/bg_tarik">
 
                 <ImageView
@@ -166,9 +165,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tarik Tunai"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <TextView
@@ -176,32 +177,35 @@
         android:layout_height="wrap_content"
         android:text="Transaksi Terbaru"
         android:textColor="@color/primary"
-        android:textSize="15dp"
+        android:textSize="16dp"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:padding="15dp"/>
+        android:layout_marginTop="30dp"
+        android:paddingHorizontal="15dp"/>
 
-    <LinearLayout
+    <!--  Start Card  -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="18dp"
+        android:paddingHorizontal="18dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/photoProfile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:src="@drawable/model_ssst4"/>
 
         <LinearLayout
-            android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/photoProfile"
+            android:layout_marginStart="15dp"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="USER"
@@ -212,7 +216,6 @@
 
 
             <TextView
-                android:id="@+id/textEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15 Nov 2022 - 19:20"
@@ -223,11 +226,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="90dp">
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textnpm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="1sp"
@@ -245,25 +248,30 @@
                 android:textStyle="bold"
                 android:textSize="13sp" />
         </LinearLayout>
+    </RelativeLayout>
+    <!--  End Card  -->
 
-    </LinearLayout>
-
-    <LinearLayout
+    <!--  Start Card  -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="18dp"
+        android:paddingHorizontal="18dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/photoProfile2"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:src="@drawable/model_ssst4"/>
 
         <LinearLayout
-            android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/photoProfile2"
+            android:layout_marginStart="15dp"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
 
             <TextView
@@ -287,8 +295,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="90dp">
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -303,12 +312,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:text="Berhasil"
-                android:textColor="@color/hijau"
+                android:text="Gagal"
+                android:textColor="@color/merah"
                 android:textStyle="bold"
                 android:textSize="13sp" />
         </LinearLayout>
-    </LinearLayout>
-
-
+    </RelativeLayout>
+    <!--  End Card  -->
 </LinearLayout>
