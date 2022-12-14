@@ -99,8 +99,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp">
 
             <LinearLayout
                 android:id="@+id/btnDeposit"
