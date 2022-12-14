@@ -160,20 +160,20 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
-        android:layout_marginTop="25dp">
+        android:padding="12dp"
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/ubahProfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Edit Profil"
-            android:textSize="18dp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/primary"/>
 
@@ -186,12 +186,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
+        android:padding="12dp"
         android:layout_marginTop="15dp">
 
         <TextView
@@ -199,7 +199,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tentang Kami"
-            android:textSize="18dp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/primary"/>
 
@@ -212,12 +212,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
+        android:padding="12sp"
         android:layout_marginTop="15dp">
 
         <TextView
@@ -225,7 +225,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Keluar"
-            android:textSize="18dp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/merah"/>
 
