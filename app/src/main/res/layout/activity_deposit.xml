@@ -188,12 +188,12 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="45dp"
-            android:background="@drawable/bg_primary"
-            android:text="Lanjut"
-            android:textAllCaps="false"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_primary"
+            android:text="Lanjut"
+            android:textAllCaps="false"
             android:textColor="@color/white" />
     </RelativeLayout>
 
