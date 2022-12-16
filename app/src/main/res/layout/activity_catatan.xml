@@ -38,12 +38,13 @@
         android:background="@color/gray"
         android:layout_marginTop="10dp"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:text="Tulis catatan..."
+        android:hint="Tulis catatan..."
         android:padding="15sp"
         android:layout_marginTop="20dp"
+        android:gravity="start"
         android:background="@drawable/bg_grey_primary"/>
 
     <RelativeLayout
