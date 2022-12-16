@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:layout_width="25sp"
@@ -43,6 +43,7 @@
         android:layout_height="135dp"
         android:text="Tulis catatan..."
         android:padding="15sp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_grey_primary"/>
 
     <RelativeLayout
