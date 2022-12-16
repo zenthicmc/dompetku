@@ -77,7 +77,7 @@
                             android:id="@+id/uangMasuk"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="9dp"
                             android:src="@drawable/ic_uang_masuk"/>
 
                         <LinearLayout
@@ -124,7 +124,7 @@
                             android:id="@+id/uangKeluar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="9dp"
                             android:src="@drawable/ic_uang_keluar"/>
 
                         <LinearLayout
