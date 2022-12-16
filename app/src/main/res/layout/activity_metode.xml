@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="25dp"
     tools:context=".MetodeActivity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
-            android:layout_marginEnd="5sp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
 
         <TextView
@@ -43,8 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp">
+        android:layout_marginTop="15dp">
 
         <ImageView
             android:layout_width="35dp"
@@ -75,8 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="35dp"
@@ -106,8 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="35dp"
@@ -140,8 +137,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp">
+        android:layout_marginTop="15dp">
 
         <ImageView
             android:layout_width="35dp"
@@ -171,8 +167,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="35dp"
@@ -203,7 +198,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp">
+>
 
         <ImageView
             android:layout_width="35dp"
@@ -227,7 +222,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="280dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"

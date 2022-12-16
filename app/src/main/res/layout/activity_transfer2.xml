@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="25dp"
     tools:context=".Transfer2Activity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
-            android:layout_marginEnd="5sp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
 
         <TextView
@@ -130,6 +130,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="10,000" />
 
             <Button
@@ -139,6 +140,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="20,000" />
 
             <Button
@@ -148,6 +150,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="50,000" />
 
         </LinearLayout>
@@ -166,6 +169,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="100,000" />
 
             <Button
@@ -175,6 +179,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="500,000" />
 
             <Button
@@ -184,6 +189,7 @@
                 android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:textStyle="bold"
                 android:hint="1,000,000" />
 
         </LinearLayout>
@@ -201,11 +207,9 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
         android:background="@drawable/bg_grey_primary"
         android:padding="12dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/logo_bri"
@@ -230,7 +234,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="280dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"

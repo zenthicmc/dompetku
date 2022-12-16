@@ -19,7 +19,7 @@
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
-            android:layout_marginEnd="5sp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
 
         <TextView
@@ -37,7 +37,7 @@
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@color/primary"
-        android:text="Masukan No telepone"/>
+        android:text="Masukan no telepon"/>
 
     <SearchView
         android:id="@+id/idSV"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:iconifiedByDefault="false"
-        android:background="@drawable/bg_stroke_primary"
+        android:background="@drawable/bg_grey_primary"
         android:queryHint="cari nomor telepon"/>
 
     <TextView
@@ -60,7 +60,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_stroke_primary"
+        android:background="@drawable/bg_grey_primary"
         android:padding="20dp"
         android:orientation="horizontal"
         android:layout_marginTop="10dp">
@@ -110,7 +110,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:layout_width="280dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
