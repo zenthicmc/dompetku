@@ -41,38 +41,54 @@
         android:layout_gravity="center">
 
         <EditText
+            android:id="@+id/inputNama"
             android:paddingStart="12sp"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginBottom="15dp"
             android:hint="Nama Lengkap"
             android:textColorHint="@color/primary"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:background="@drawable/bg_stroke_primary"/>
 
         <EditText
+            android:id="@+id/inputHp"
             android:paddingStart="12sp"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginBottom="15dp"
             android:hint="No Hp"
             android:textColorHint="@color/primary"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:background="@drawable/bg_stroke_primary"/>
 
         <EditText
+            android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingStart="12sp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/primary"
-            android:textSize="16sp"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/bg_stroke_primary"/>
+
+
+        <Spinner
+            android:id="@+id/inputKelamin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_stroke_primary"
+            android:spinnerMode="dropdown"
+            android:textColorHint="@color/primary"
+            android:paddingStart="8sp"
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/bg_primary"
@@ -96,6 +112,7 @@
             android:textColor="@color/primary"/>
 
         <TextView
+            android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign in"

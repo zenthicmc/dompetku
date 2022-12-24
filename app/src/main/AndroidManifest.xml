@@ -106,7 +106,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".TransferActivity"
+            android:name=".Transfer1Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
