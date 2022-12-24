@@ -193,8 +193,8 @@
             android:id="@+id/btnListrik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="25dp"
             android:gravity="center"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -221,7 +221,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginRight="25dp"
             android:layout_toRightOf="@+id/btnListrik">
 
             <LinearLayout
@@ -249,7 +248,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_toLeftOf="@+id/btnVoucher">
+            android:layout_toRightOf="@id/btnInternet"
+            android:layout_marginLeft="35dp">
 
             <LinearLayout
                 android:layout_width="60dp"
@@ -275,7 +275,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="25dp"
             android:layout_alignParentEnd="true">
 
             <LinearLayout
