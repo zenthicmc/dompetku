@@ -24,18 +24,22 @@
         android:textSize="35sp"
         android:layout_marginTop="40dp"
         android:textStyle="bold" />
-    
+
     <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:layout_marginTop="40dp"
-        android:background="@drawable/bg_stroke_primary"
         android:textSize="16sp"
         android:textColor="@color/primary"
+        android:background="@drawable/bg_stroke_primary"
+        app:strokeColor="@color/primary"
         android:textAllCaps="false"/>
 
     <Button
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
