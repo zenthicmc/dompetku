@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="15dp"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -16,19 +15,17 @@
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/bottomNavigation"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="-6dp"
-            tools:layout="@android:layout/activity_list_item" />
+            tools:layout="@android:layout/activity_list_item"
+            android:layout_above="@id/bottomNavigation" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:layout_alignParentBottom="true"
-            app:itemTextColor="@color/black"
             app:menu="@menu/bottom_nav"
-            android:background="@color/white"/>
+            app:labelVisibilityMode="unlabeled"/>
 
     </RelativeLayout>
 
