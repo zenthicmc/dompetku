@@ -29,23 +29,26 @@
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Sign In"
         android:layout_marginTop="40dp"
         android:textSize="16sp"
         android:textColor="@color/primary"
-        android:background="@drawable/bg_stroke_primary"
         app:strokeColor="@color/primary"
+        app:strokeWidth="1dp"
+        app:cornerRadius="5dp"
         android:textAllCaps="false"/>
 
     <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:text="Create an Account"
         android:background="@drawable/bg_primary"
         android:textColor="@color/white"
+        app:backgroundTint="@color/primary"
         android:textSize="16sp"
         android:textAllCaps="false"/>
 
