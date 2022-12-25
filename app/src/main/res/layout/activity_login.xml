@@ -65,6 +65,8 @@
     </LinearLayout>
 
     <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        app:backgroundTint="@color/primary"
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="45dp"
