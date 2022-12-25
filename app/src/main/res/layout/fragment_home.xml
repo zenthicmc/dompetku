@@ -142,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Transaksi"
+                    android:text="Transfer"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Tarik Tunai"
+                    android:text="Withdraw"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -333,6 +333,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
                 android:layout_marginRight="25dp">
 
                 <RelativeLayout
@@ -360,18 +361,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4sp"
-                            android:text="USER"
+                            android:text="Deposit"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15 Nov 2022 - 19:20"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -385,9 +384,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1sp"
-                            android:text="+RP 900,000"
+                            android:text="+Rp 900,000"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="13sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -409,7 +408,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="25dp">
+                android:layout_marginRight="25dp"
+                app:cardCornerRadius="10dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -436,7 +436,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4sp"
-                            android:text="USER"
+                            android:text="Withdraw"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -446,8 +446,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15 Nov 2022 - 19:20"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -461,9 +460,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1sp"
-                            android:text="+RP 900,000"
+                            android:text="-Rp 900,000"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="13sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -486,7 +485,8 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginRight="25dp">
+                android:layout_marginRight="25dp"
+                app:cardCornerRadius="10dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -513,7 +513,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4sp"
-                            android:text="USER"
+                            android:text="Transfer"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -523,8 +523,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15 Nov 2022 - 19:20"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -538,9 +537,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1sp"
-                            android:text="+RP 900,000"
+                            android:text="-Rp 900,000"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="13sp"
                             android:textStyle="bold" />
 
                         <TextView

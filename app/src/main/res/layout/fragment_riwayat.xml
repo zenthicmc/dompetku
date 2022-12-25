@@ -60,19 +60,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="USER"
+                        android:text="Deposit"
                         android:layout_marginBottom="4sp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="15sp"/>
 
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15 Nov 2022 - 19:20"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -137,19 +135,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="USER"
+                        android:text="Transfer"
                         android:layout_marginBottom="4sp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="15sp"/>
 
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15 Nov 2022 - 19:20"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -163,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="1sp"
-                        android:text="+RP 900,000"
+                        android:text="-Rp 900,000"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="15sp" />
@@ -214,19 +210,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="USER"
+                        android:text="Withdraw"
                         android:layout_marginBottom="4sp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="15sp"/>
 
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="15 Nov 2022 - 19:20"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -240,7 +234,81 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="1sp"
-                        android:text="+RP 900,000"
+                        android:text="-Rp 900,000"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Gagal"
+                        android:textColor="@color/merah"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:layout_alignBottom="@id/photoProfile3"
+                android:background="@color/gray" />
+            <!--  End Card  -->
+
+            <!--  Start Card  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:layout_marginTop="5dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/photoProfile4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/model_ssst4"/>
+
+                <LinearLayout
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/photoProfile4"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Topup"
+                        android:layout_marginBottom="4sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 Nov 2022 - 19:20"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="1sp"
+                        android:text="-Rp 900,000"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="15sp" />
