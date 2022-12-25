@@ -91,7 +91,13 @@ class CreatePasswordActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
-                    // handle error
+                    MaterialAlertDialogBuilder(this@CreatePasswordActivity)
+                        .setTitle("Registrasi Gagal")
+                        .setMessage("Silahkan cek kembali data anda")
+                        .setPositiveButton("Ok") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             })
     }
