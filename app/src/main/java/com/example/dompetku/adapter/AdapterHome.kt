@@ -39,13 +39,11 @@ class AdapterHome(val context: Context, val homeList: ArrayList<DataHome>): Recy
             .load(currentItem.icon)
             .into(holder.icon)
 
-        // check if status is success
-        if(currentItem.status == "Success") {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
-        } else if(currentItem.status == "Pending") {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
-        } else {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
+        // check when status is success
+        when(currentItem.status) {
+            "Success" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
+            "Pending" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
+            else -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
         }
     }
 
