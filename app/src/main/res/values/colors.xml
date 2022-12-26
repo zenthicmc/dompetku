@@ -18,5 +18,8 @@
     <color name="navy_blue">#6269A8</color>
     <color name="green">#8CCC76</color>
     <color name="yellow">#EBDB4C</color>
+    <color name="red">#D34D4D</color>
+    <color name="orange">#F8BF50</color>
+    <color name="green2">#3FCE4D</color>
 
 </resources>
