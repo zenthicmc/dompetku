@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var inputPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnRegister: TextView
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(nohp: String, password: String) {
+        sessionManager = SessionManager(this)
         AndroidNetworking.post("https://dompetku-api.vercel.app/api/auth/login")
             .setTag("register")
             .setPriority(Priority.MEDIUM)
@@ -60,7 +62,11 @@ class LoginActivity : AppCompatActivity() {
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
                     Log.d("response", response.toString())
+                    val getJsonObject: JSONObject = response.getJSONObject("data")
                     if(response.getString("success").equals("true")) {
+                        val token = getJsonObject.getString("token")
+                        sessionManager.setToken(token)
+                        sessionManager.setLogin(true)
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                     }
