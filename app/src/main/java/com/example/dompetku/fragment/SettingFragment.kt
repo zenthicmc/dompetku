@@ -1,5 +1,6 @@
 package com.example.dompetku.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,9 +15,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
-import com.example.dompetku.LoginActivity
-import com.example.dompetku.R
-import com.example.dompetku.SessionManager
+import com.example.dompetku.*
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import org.w3c.dom.Text
@@ -30,8 +29,11 @@ class SettingFragment : Fragment() {
     private lateinit var txtHp: TextView
     private lateinit var txtUangMasuk: TextView
     private lateinit var txtUangKeluar: TextView
+    private lateinit var btnEditProdil: RelativeLayout
+    private lateinit var btnTentangKami: RelativeLayout
     private lateinit var btnLogout: RelativeLayout
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,7 +51,18 @@ class SettingFragment : Fragment() {
         getUserProfile()
         getUserStats()
 
+        btnEditProdil = view.findViewById(R.id.btnEditProfil)
+        btnTentangKami = view.findViewById(R.id.btnTentangKami)
         btnLogout = view.findViewById(R.id.btnLogout)
+
+        btnEditProdil.setOnClickListener{
+            val intent = Intent(activity, EditProfilActivity::class.java)
+            startActivity(intent)
+        }
+        btnTentangKami.setOnClickListener{
+            val intent = Intent(activity, TentangKamiActivity::class.java)
+            startActivity(intent)
+        }
         btnLogout.setOnClickListener {
             sessionManager.removeData()
             val intent = Intent(activity, LoginActivity::class.java)
