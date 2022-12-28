@@ -41,12 +41,10 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
             .into(holder.icon)
 
         // check if status is success
-        if(currentItem.status == "Success") {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
-        } else if(currentItem.status == "Pending") {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
-        } else {
-            holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
+        when(currentItem.status) {
+            "Success" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
+            "Pending" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
+            else -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
         }
     }
 
