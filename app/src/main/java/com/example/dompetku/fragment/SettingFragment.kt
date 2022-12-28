@@ -1,5 +1,6 @@
 package com.example.dompetku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,11 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.example.dompetku.LoginActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.squareup.picasso.Picasso
@@ -27,6 +30,7 @@ class SettingFragment : Fragment() {
     private lateinit var txtHp: TextView
     private lateinit var txtUangMasuk: TextView
     private lateinit var txtUangKeluar: TextView
+    private lateinit var btnLogout: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +48,13 @@ class SettingFragment : Fragment() {
 
         getUserProfile()
         getUserStats()
+
+        btnLogout = view.findViewById(R.id.btnLogout)
+        btnLogout.setOnClickListener {
+            sessionManager.removeData()
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }
