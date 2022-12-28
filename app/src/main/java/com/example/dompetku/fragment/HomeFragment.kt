@@ -1,5 +1,6 @@
 package com.example.dompetku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.Data
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,8 +18,7 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.androidnetworking.interfaces.JSONObjectRequestListener
-import com.example.dompetku.R
-import com.example.dompetku.SessionManager
+import com.example.dompetku.*
 import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.dataclass.DataHome
 import com.squareup.picasso.Picasso
@@ -33,6 +34,9 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataHome : ArrayList<DataHome>
     private lateinit var photoProfile: ImageView
+    private lateinit var btnDeposit: LinearLayout
+    private lateinit var btnWithdraw: LinearLayout
+    private lateinit var btnTransfer: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +53,24 @@ class HomeFragment : Fragment() {
         photoProfile = view.findViewById(R.id.photoProfile)
 
         getData()
+
+        btnDeposit = view.findViewById(R.id.btnDeposit)
+        btnDeposit.setOnClickListener {
+            val intent = Intent(activity, DepositActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnWithdraw = view.findViewById(R.id.btnWithdraw)
+        btnWithdraw.setOnClickListener {
+            val intent = Intent(activity, TarikTunaiActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnTransfer = view.findViewById(R.id.btnTransfer)
+        btnTransfer.setOnClickListener {
+            val intent = Intent(activity, Transfer1Activity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }

@@ -7,5 +7,7 @@ class Transfer1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transfer1)
+
+
     }
 }
