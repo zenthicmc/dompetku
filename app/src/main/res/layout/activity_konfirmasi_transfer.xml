@@ -16,6 +16,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
@@ -41,7 +42,7 @@
             android:id="@+id/photoProfile"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/model_ssst4"/>
+            android:src="@drawable/profil_placeholder"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,57 +53,63 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4sp"
-                android:text="USER XXXXXXX"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="081XXXXXXXXX"
-                android:textSize="13sp"
-                android:textColor="@color/primary"
-                android:textStyle="bold" />
+                android:textSize="14sp"
+                android:textColor="@color/primary"/>
         </LinearLayout>
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nominal"
-        android:textSize="15sp"
-        android:layout_marginTop="25dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rp 100,000"
-        android:textColor="@color/primary"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="center"
         android:background="@color/gray"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nominal"
+        android:textSize="17sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 100,000"
+        android:textColor="@color/primary"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Catatan"
-        android:layout_marginTop="20sp"
-        android:textSize="18sp"/>
+        android:textSize="17sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/txtCatatan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5sp"
+        android:textColor="@color/primary"
         android:text="Lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"/>
 
 
@@ -111,6 +118,9 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnSend"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            app:backgroundTint="@color/primary"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"

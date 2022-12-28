@@ -24,16 +24,18 @@
         android:textColor="@color/white"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoProfile"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_gravity="center"
+            android:scaleType="centerCrop"
             android:layout_marginTop="25dp"
-            android:src="@drawable/model_ssst4"/>
+            android:src="@drawable/profil_placeholder"/>
 
         <TextView
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kyle April"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="15sp"
@@ -41,9 +43,9 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/txtHp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="082XXXXXXXXX"
             android:layout_gravity="center"
             android:textSize="14sp"
             android:layout_marginBottom="35sp"
@@ -98,9 +100,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/txtUangMasuk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rp 1.399.000"
+                                android:text="Rp"
                                 android:textColor="@color/white"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -148,9 +151,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/txtUangKeluar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rp 1.399.000"
+                                android:text="Rp"
                                 android:textColor="@color/white"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -213,6 +217,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
