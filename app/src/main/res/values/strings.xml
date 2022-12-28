@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Dompetku</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="Kelamin">
+        <item>-Pilih Kelamin-</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

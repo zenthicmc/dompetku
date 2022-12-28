@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="25dp"
+    tools:context=".Transfer2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_arrow_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transfer"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoProfile"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/model_ssst4"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_toRightOf="@+id/photoProfile"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4sp"
+                android:text="USER XXXXXXX"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="081XXXXXXXXX"
+                android:textSize="13sp"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nominal"
+        android:textSize="15sp"
+        android:layout_marginTop="25dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rp100,000"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="25sp"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilih Nominal"
+        android:textSize="15sp"
+        android:layout_marginTop="25sp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btnNominal1"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="10,000" />
+
+            <Button
+                android:id="@+id/btnDepoNominal2"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="20,000" />
+
+            <Button
+                android:id="@+id/btnNominal3"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="50,000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnNominal4"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="100,000" />
+
+            <Button
+                android:id="@+id/btnDepoNominal5"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="500,000" />
+
+            <Button
+                android:id="@+id/btnNominal6"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_stroke_depo"
+                android:textColorHint="@color/primary"
+                android:textStyle="bold"
+                android:hint="1,000,000" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:text="Tambah Catatan"
+        android:textStyle="bold"
+        android:textColor="@color/primary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_grey_primary"
+        android:padding="12dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/logo_bri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_note"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/ubahProfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="contoh ; bayar pulsa "
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/logo_bri"
+            android:textColor="@color/gray"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_primary"
+            android:text="Lanjut"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -9,96 +9,128 @@
     android:padding="25dp"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="35dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ilusi_dompetku"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:textColor="@color/primary"
-        android:textSize="16sp"
-        android:text="Silahkan lengkapi form untuk mendaftar!"/>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="35dp"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:paddingStart="12sp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginBottom="15dp"
-            android:hint="Nama Lengkap"
-            android:textColorHint="@color/primary"
-            android:background="@drawable/bg_stroke_primary"/>
-
-        <EditText
-            android:paddingStart="12sp"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginBottom="15dp"
-            android:hint="No Hp"
-            android:textColorHint="@color/primary"
-            android:background="@drawable/bg_stroke_primary"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:paddingStart="12sp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColorHint="@color/primary"
-            android:background="@drawable/bg_stroke_primary"/>
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/bg_primary"
-        android:text="Next"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:layout_marginBottom="15dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5sp"
-            android:text="Sudah memiliki akun?"
-            android:textSize="16dp"
-            android:textColor="@color/primary"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign in"
-            android:textColor="@color/primary"
-            android:textSize="16dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="35dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ilusi_dompetku"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:text="Silahkan lengkapi form untuk mendaftar!"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="35dp"
+                android:layout_gravity="center">
+
+                <EditText
+                    android:id="@+id/inputNama"
+                    android:paddingStart="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="15dp"
+                    android:hint="Nama Lengkap"
+                    android:textColorHint="@color/primary"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_stroke_primary"/>
+
+                <EditText
+                    android:id="@+id/inputHp"
+                    android:paddingStart="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="15dp"
+                    android:hint="No Hp"
+                    android:textColorHint="@color/primary"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_stroke_primary"/>
+
+                <EditText
+                    android:id="@+id/inputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingStart="12sp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/primary"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_stroke_primary"/>
+
+
+                <Spinner
+                    android:id="@+id/inputKelamin"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_stroke_primary"
+                    android:spinnerMode="dropdown"
+                    android:textColorHint="@color/primary"
+                    android:paddingStart="8sp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <Button
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                app:backgroundTint="@color/primary"
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_primary"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5sp"
+                    android:text="Sudah memiliki akun?"
+                    android:textSize="16dp"
+                    android:textColor="@color/primary"/>
+
+                <TextView
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign in"
+                    android:textColor="@color/primary"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

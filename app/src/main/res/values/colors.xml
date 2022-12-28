@@ -8,4 +8,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#2C2B54</color>
+    <color name="matcha">#62A8A8</color>
+    <color name="pink">#CC7676</color>
+    <color name="ungu">#786FAF</color>
+    <color name="hijau">#19793F</color>
+    <color name="merah">#CA0E0E</color>
+    <color name="gray">#AFAFAF</color>
+    <color name="abu">#D9D9D9</color>
+    <color name="navy_blue">#6269A8</color>
+    <color name="green">#8CCC76</color>
+    <color name="yellow">#EBDB4C</color>
+    <color name="red">#D34D4D</color>
+    <color name="orange">#F8BF50</color>
+    <color name="green2">#3FCE4D</color>
+
 </resources>
