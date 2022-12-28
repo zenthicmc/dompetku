@@ -16,6 +16,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
@@ -41,7 +42,7 @@
             android:id="@+id/photoProfile"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/model_ssst4"/>
+            android:src="@drawable/profil_placeholder"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,21 +53,20 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4sp"
-                android:text="USER XXXXXXX"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtHp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="081XXXXXXXXX"
-                android:textSize="13sp"
-                android:textColor="@color/primary"
-                android:textStyle="bold" />
+                android:textSize="14sp"
+                android:textColor="@color/primary"/>
         </LinearLayout>
     </RelativeLayout>
 
@@ -80,72 +80,77 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nominal"
-        android:textSize="15sp"
+        android:text="Masukkan Nominal"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
         android:layout_marginTop="25dp"/>
 
     <EditText
+        android:id="@+id/editAmount"
+        android:paddingStart="12sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rp100,000"
-        android:textStyle="bold"
+        android:layout_height="45dp"
+        android:hint="10000"
         android:textColor="@color/primary"
-        android:textSize="25sp"
-        android:paddingVertical="10dp"
-        android:layout_marginBottom="5sp"/>
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_grey_primary"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pilih Nominal"
-        android:textSize="15sp"
-        android:layout_marginTop="25sp"
+        android:textSize="17sp"
+        android:layout_marginTop="25dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp"
-        android:gravity="center">
+        android:layout_marginTop="15dp">
 
         <LinearLayout
-            android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnNominal1"
+            <TextView
+                android:id="@+id/btn10k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:hint="10,000" />
 
-            <Button
-                android:id="@+id/btnDepoNominal2"
+            <TextView
+                android:id="@+id/btn20k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="20,000" />
 
-            <Button
-                android:id="@+id/btnNominal3"
+            <TextView
+                android:id="@+id/btn50k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="50,000" />
 
         </LinearLayout>
@@ -154,37 +159,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_gravity="center"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnNominal4"
+            <TextView
+                android:id="@+id/btn100k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:hint="100,000" />
 
-            <Button
-                android:id="@+id/btnDepoNominal5"
+            <TextView
+                android:id="@+id/btn500k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="500,000" />
 
-            <Button
-                android:id="@+id/btnNominal6"
+            <TextView
+                android:id="@+id/btn1000k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="1,000,000" />
 
         </LinearLayout>
@@ -196,6 +203,7 @@
         android:layout_marginTop="25sp"
         android:text="Tambah Catatan"
         android:textStyle="bold"
+        android:textSize="17sp"
         android:textColor="@color/primary"/>
 
     <RelativeLayout
@@ -203,24 +211,27 @@
         android:layout_height="45dp"
         android:orientation="horizontal"
         android:background="@drawable/bg_grey_primary"
-        android:padding="12dp"
-        android:layout_marginTop="10dp">
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="7dp">
 
         <ImageView
-            android:id="@+id/logo_bri"
+            android:id="@+id/logoKalender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_note"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="5dp"/>
 
-        <TextView
-            android:id="@+id/ubahProfil"
+        <EditText
+            android:id="@+id/editCatatan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="contoh ; bayar pulsa "
+            android:layout_height="45dp"
+            android:hint="contoh: bayar pulsa "
             android:textSize="15sp"
-            android:layout_toRightOf="@+id/logo_bri"
-            android:textColor="@color/gray"/>
+            android:layout_marginStart="5dp"
+            android:layout_toRightOf="@+id/logoKalender"
+            android:background="@android:color/transparent"
+            android:textColor="@color/primary"/>
 
     </RelativeLayout>
 
@@ -229,6 +240,8 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnLanjut"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -237,7 +250,8 @@
             android:background="@drawable/bg_primary"
             android:text="Lanjut"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary" />
     </RelativeLayout>
 
 </LinearLayout>

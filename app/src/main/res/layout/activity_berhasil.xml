@@ -11,6 +11,7 @@
     tools:context=".BerhasilActivity">
 
     <ImageView
+        android:id="@+id/btnBack"
         android:layout_width="25sp"
         android:layout_height="25sp"
         android:src="@drawable/ic_arrow_back_white"/>
@@ -30,6 +31,7 @@
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -42,12 +44,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Jumlah Deposit"
+            android:text="Jumlah Nominal"
             android:textSize="15dp"
             android:layout_marginTop="50dp"
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/txtAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

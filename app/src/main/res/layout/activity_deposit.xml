@@ -36,24 +36,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="25dp">
+        android:layout_marginBottom="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nominal"
+            android:text="Masukkan Nominal"
+            android:textSize="17sp"
+            android:textStyle="bold"
             android:textColor="@color/primary"/>
 
         <EditText
             android:id="@+id/editAmount"
+            android:paddingStart="12sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:hint="10000"
-            android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="25sp"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="5sp"/>
+            android:textSize="14sp"
+            android:layout_marginTop="7dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/bg_grey_primary"/>
 
     </LinearLayout>
 
@@ -61,15 +64,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pilih Nominal"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:textColor="@color/primary"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="15dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -155,6 +159,15 @@
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilih Metode Pembayaran"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/primary"/>
+
     <RelativeLayout
         android:id="@+id/btnMethod"
         android:layout_width="match_parent"
@@ -162,7 +175,7 @@
         android:orientation="horizontal"
         android:background="@drawable/bg_grey_primary"
         android:padding="12dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="7dp">
 
         <ImageView
             android:id="@+id/metodeIcon"
@@ -182,10 +195,12 @@
             android:textColor="@color/primary"/>
 
         <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/ic_arrow_right" />
     </RelativeLayout>
 
     <RelativeLayout

@@ -65,7 +65,6 @@
         android:layout_height="1dp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="15dp"
-        android:layout_alignBottom="@id/photoProfile3"
         android:background="@color/gray" />
 
     <!--  End Card  -->

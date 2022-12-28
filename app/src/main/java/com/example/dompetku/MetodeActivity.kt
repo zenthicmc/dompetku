@@ -46,7 +46,7 @@ class MetodeActivity : AppCompatActivity() {
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/payment")
             .addHeaders("Authorization", "Bearer $token")
-            .setTag("profile")
+            .setTag("metode")
             .setPriority(Priority.LOW)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
