@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".EditProfilActivity">
 
+<!--    Start Frame-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,18 +67,6 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/white"/>
 
-        <!--Start -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@color/gray" />
-
-        </LinearLayout> <!-- ttup Start -->
     </LinearLayout> <!-- ttup Frame-->
 
     <LinearLayout
@@ -143,8 +132,6 @@
                 android:textColor="@color/primary"
                 android:textStyle="bold"
                 android:layout_marginRight="5sp"/>
-
-
 
                 <RadioButton
                     android:layout_width="30dp"
