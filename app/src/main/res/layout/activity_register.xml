@@ -40,7 +40,7 @@
                 android:layout_marginBottom="30dp"
                 android:textColor="@color/primary"
                 android:textSize="16sp"
-                android:text="Silahkan lengkapi form untuk mendaftar!"/>
+                android:text="Silahkan lengkapi form ini untuk mendaftar"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
