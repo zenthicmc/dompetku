@@ -45,27 +45,8 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:layout_marginTop="25dp"
-            android:src="@drawable/profil_placeholder"/>
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="15sp"
-            android:textSize="20sp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:id="@+id/txtHp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:layout_marginBottom="35sp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"/>
+            android:layout_marginBottom="35dp"
+            android:src="@drawable/profil_placeholder" />
 
     </LinearLayout> <!-- ttup Frame-->
 
@@ -148,6 +129,7 @@
 
         </LinearLayout>
 
+        <!--Start Button-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
