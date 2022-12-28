@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +20,7 @@ import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.dataclass.DataHome
+import com.squareup.picasso.Picasso
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.DecimalFormat
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var txtSaldo: TextView
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataHome : ArrayList<DataHome>
+    private lateinit var photoProfile: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +46,7 @@ class HomeFragment : Fragment() {
         txtSaldo = view.findViewById(R.id.txtSaldo)
         recyclerView = view.findViewById(R.id.recyclerHome)
         dataHome = ArrayList<DataHome>()
+        photoProfile = view.findViewById(R.id.photoProfile)
 
         getData()
 
@@ -83,6 +87,11 @@ class HomeFragment : Fragment() {
 
         txtName.text = "Halo, " + user.getString("name") + "!"
         txtSaldo.text = decimalFormat.format(user.getInt("saldo")).toString()
+
+        // load image
+        Picasso.get()
+            .load(user.getString("image"))
+            .into(photoProfile)
     }
 
     private fun setTransactions(transactions: JSONArray) {

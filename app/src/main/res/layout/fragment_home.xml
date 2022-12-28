@@ -26,16 +26,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="8dp"
-                android:text="Halo, xxxx!"
+                android:text="Halo"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/photoProfile"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/model_ssst4" />
+                android:src="@drawable/profil_placeholder" />
 
         </RelativeLayout>
 
@@ -89,7 +90,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/txtRp"
-                    android:text="xxx.xxx.xxx"
                     android:textColor="@color/primary"
                     android:textSize="35dp"
                     android:textStyle="bold" />
