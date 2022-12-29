@@ -166,7 +166,9 @@
             </LinearLayout> <!-- ttup Start -->
         </LinearLayout> <!--Frame -->
 
+<!--    Edit Profil-->
     <RelativeLayout
+        android:id="@+id/btnEditProfil"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -191,7 +193,9 @@
             android:src="@drawable/ic_arrow_right"/>
     </RelativeLayout>
 
+<!--    Tentang Kami-->
     <RelativeLayout
+        android:id="@+id/btnTentangKami"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
