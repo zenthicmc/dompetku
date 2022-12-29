@@ -17,7 +17,6 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import org.json.JSONObject
 
-
 class RegisterActivity : AppCompatActivity() {
     private lateinit var btnLogin: TextView
     private lateinit var inputNama: EditText
