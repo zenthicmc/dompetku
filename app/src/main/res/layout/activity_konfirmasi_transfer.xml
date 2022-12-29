@@ -75,14 +75,32 @@
         android:layout_height="1dp"
         android:layout_gravity="center"
         android:background="@color/gray"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nominal"
+        android:text="Saldo Anda"
         android:textSize="17sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 100,000"
+        android:textColor="@color/primary"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nominal Transfer"
+        android:textSize="17sp"
+        android:layout_marginTop="17dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
@@ -100,7 +118,7 @@
         android:layout_height="wrap_content"
         android:text="Catatan"
         android:textSize="17sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="17dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 

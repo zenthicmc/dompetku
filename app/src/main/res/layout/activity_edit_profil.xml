@@ -19,8 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="25dp"
-            android:layout_marginBottom="35dp">
+            android:padding="25dp">
 
             <ImageView
                 android:layout_width="25sp"
@@ -44,8 +43,8 @@
             android:layout_height="130dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="45dp"
             android:src="@drawable/profil_placeholder" />
 
     </LinearLayout> <!-- ttup Frame-->
@@ -129,22 +128,18 @@
 
         </LinearLayout>
 
-        <!--Start Button-->
-        <RelativeLayout
+        <Button
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/bg_primary"
-                android:text="Ubah"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_primary"
+            android:text="Simpan"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/primary"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

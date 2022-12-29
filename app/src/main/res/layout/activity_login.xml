@@ -8,14 +8,14 @@
     android:orientation="vertical"
     android:padding="25dp"
     tools:context=".LoginActivity">
-    
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ilusi_dompetku"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/ilusi_dompetku" />
 
     <TextView
         android:layout_width="wrap_content"
