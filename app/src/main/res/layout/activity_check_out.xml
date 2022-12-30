@@ -16,6 +16,7 @@
         android:layout_marginBottom="15dp">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
@@ -32,14 +33,15 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txtDate"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="Bayar sebelum 27 Des 2022, 12:18"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_primary"
         android:gravity="center"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:background="@drawable/bg_primary"/>
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,22 +57,23 @@
         android:paddingEnd="15dp">
 
         <ImageView
-            android:id="@+id/iclogoBRI"
+            android:id="@+id/icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_bri" />
+            android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/txtRek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/iclogoBRI"
+            android:layout_toRightOf="@+id/icon"
+            android:layout_marginStart="10dp"
             android:textColor="@color/primary" />
 
         <ImageView
+            android:id="@+id/iconCopy"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/ic_content_copy"
@@ -90,14 +93,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
         android:textSize="15sp"
-        android:text="Jumlah yang harus dibayar"/>
+        android:text="No Referensi"/>
+
+    <TextView
+        android:id="@+id/txtReference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/primary"
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rp 100,000"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:text="Jumlah yang harus dibayar"/>
+
+    <TextView
+        android:id="@+id/txtAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_marginTop="10sp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/primary"
         android:textSize="20sp"/>
 
@@ -109,27 +128,27 @@
         android:layout_marginTop="10sp"/>
 
     <TextView
+        android:id="@+id/txtMethod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BRIVA"
         android:textStyle="bold"
-        android:layout_marginTop="5sp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/primary"
         android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:textSize="15sp"
-        android:text="Status"/>
+        android:layout_marginTop="10dp"
+        android:text="Status"
+        android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/txtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UNPAID"
         android:textStyle="bold"
-        android:layout_marginTop="5sp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/red"
         android:textSize="20sp"/>
 
@@ -150,38 +169,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Login ke Mandiri Internet Banking:"/>
+            android:textSize="13sp"
+            android:text="1. Buka aplikasi m-banking di smartphone."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Pilih menu BAYAR > MULTI PAYMENT > SERVICE PROVIDERS"/>
+            android:textSize="13sp"
+            android:text="2. Buka aplikasi m-banking di smartphone."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Pilih GoPay CUSTOMER"/>
+            android:textSize="13sp"
+            android:text="3. Pilih menu Transfer > Bank Lain Dalam Negeri."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Masukkan nomor HP mu yang terdaftar pada Aplikasi Gojek."/>
+            android:textSize="13sp"
+            android:text="4. Masukkan Kode Bank dan Nomor Virtual Account tujuan."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Masukkan jumlah GOPAY yang ingin diisi"/>
+            android:textSize="13sp"
+            android:text="5. Masukkan nominal yang harus dibayarkan."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="- Ikuti petunjuk selanjutnya untuk menyelesaikan proses pengisian GoPay."/>
+            android:textSize="13sp"
+            android:text="6. Layar akan menunjukkan konfirmasi. Apabila telah sesuai, pilih Lanjutkan / Kirim."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="7. Masukkan PIN transaksi."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="8. Selesai."/>
+
 
     </LinearLayout>
 
@@ -190,6 +223,8 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnPay"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -198,7 +233,8 @@
             android:background="@drawable/bg_primary"
             android:text="Sudah Bayar"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary" />
     </RelativeLayout>
 
 </LinearLayout>

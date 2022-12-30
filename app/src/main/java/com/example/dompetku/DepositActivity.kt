@@ -3,8 +3,15 @@ package com.example.dompetku
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
+import com.androidnetworking.AndroidNetworking
+import com.androidnetworking.common.Priority
+import com.androidnetworking.error.ANError
+import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
+import org.json.JSONObject
 
 class DepositActivity : AppCompatActivity() {
     private lateinit var sessionManager: SessionManager
@@ -79,7 +86,17 @@ class DepositActivity : AppCompatActivity() {
         }
 
         btnLanjut.setOnClickListener {
-            // goes here
+            val metode = sessionManager.getMetode()
+            val code = metode["code"]
+
+            // check if editAmount is empty
+            if(editAmount.text.toString().isEmpty()) {
+                editAmount.error = "Amount is required"
+                editAmount.requestFocus()
+                return@setOnClickListener
+            } else {
+                requestDeposit(code, editAmount.text.toString())
+            }
         }
     }
 
@@ -93,5 +110,41 @@ class DepositActivity : AppCompatActivity() {
 
     private fun setAmount(amount: String) {
         editAmount.setText(amount)
+    }
+
+    private fun requestDeposit(method: String?, amount: String) {
+        val token = sessionManager.getToken()
+
+        AndroidNetworking.post("https://dompetku-api.vercel.app/api/transaction/deposit")
+            .setTag("deposit")
+            .setPriority(Priority.MEDIUM)
+            .addBodyParameter("method", method)
+            .addBodyParameter("amount", amount)
+            .addHeaders("Authorization", "Bearer $token")
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject) {
+                    Log.d("response deposit", response.toString())
+                    val data = response.getJSONObject("data")
+
+                    if(response.getString("success").equals("true")) {
+                        val intent = Intent(this@DepositActivity, CheckOutActivity::class.java)
+                        intent.putExtra("id", data.getString("_id"))
+                        intent.putExtra("reference", data.getString("reference"))
+                        intent.putExtra("merchant_ref", data.getString("merchant_ref"))
+                        startActivity(intent)
+                    }
+                }
+
+                override fun onError(error: ANError) {
+                    MaterialAlertDialogBuilder(this@DepositActivity)
+                        .setTitle("Deposit Gagal")
+                        .setMessage("Silahkan coba lagi nanti")
+                        .setPositiveButton("Ok") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+            })
     }
 }
