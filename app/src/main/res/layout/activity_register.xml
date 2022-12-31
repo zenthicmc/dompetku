@@ -19,11 +19,12 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="144dp"
+                android:layout_width="250dp"
+                android:layout_height="140dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="35dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="35dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/ilus5_dompetku"/>
 
             <TextView
