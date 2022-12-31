@@ -2,12 +2,15 @@ package com.example.dompetku.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dompetku.PembayaranActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.dataclass.DataHome
@@ -36,6 +39,12 @@ class AdapterTopup2(val context: Context, val topupList: ArrayList<DataTopup>): 
         Picasso.get()
             .load(currentItem.icon)
             .into(holder.productImg)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, PembayaranActivity::class.java)
+            intent.putExtra("code", currentItem.code)
+            startActivity(context, intent, null)
+        }
 
     }
 

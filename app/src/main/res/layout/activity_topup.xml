@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="35dp">
+        android:layout_marginBottom="30dp">
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -29,7 +29,7 @@
             android:text="Pilih Produk"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <TextView
@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:text="VOUCHER PLN"
         android:textColor="@color/primary"
+        android:textSize="14sp"
         android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -21,14 +21,14 @@
 
         <TextView
             android:id="@+id/txtName"
-            android:layout_toRightOf="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
             android:layout_centerInParent="true"
-            android:textColor="@color/primary"/>
+            android:layout_toRightOf="@+id/icon"
+            android:text="BANK RAKYAT INDONESIA"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="15dp"

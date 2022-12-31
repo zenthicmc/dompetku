@@ -28,7 +28,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Halo"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:text="Saldomu"
                     android:textColor="@color/primary"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -75,7 +75,7 @@
                     android:layout_marginEnd="5dp"
                     android:text="Rp "
                     android:textColor="@color/gray"
-                    android:textSize="35dp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/txtRp"
                     android:textColor="@color/primary"
-                    android:textSize="35dp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -180,7 +180,7 @@
             android:paddingHorizontal="25dp"
             android:text="Tagihan &amp; Top up"
             android:textColor="@color/primary"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -329,7 +329,7 @@
                 android:paddingHorizontal="25dp"
                 android:text="Transaksi Terbaru"
                 android:textColor="@color/primary"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold" />
 

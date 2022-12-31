@@ -24,7 +24,7 @@
             android:layout_toEndOf="@+id/productImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_centerInParent="true"

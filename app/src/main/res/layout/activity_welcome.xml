@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Jadikan dompetku menjadi dompet digital nomer satu anda!"
             android:textColor="@color/primary"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:layout_marginTop="40dp"
             android:textStyle="bold" />
 

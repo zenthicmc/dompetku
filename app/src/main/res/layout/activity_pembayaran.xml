@@ -13,11 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -27,9 +28,8 @@
             android:layout_height="wrap_content"
             android:text="Pembayaran"
             android:textStyle="bold"
-            android:layout_gravity="center"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -89,23 +89,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customer ID / No HP"
+            android:text="No Penerima"
             android:textColor="@color/primary"
             android:textStyle="bold"
-            android:textSize="17sp"/>
+            android:textSize="14sp"/>
 
         <EditText
-            android:id="@+id/editAmount"
+            android:id="@+id/editReceiver"
             android:paddingHorizontal="12sp"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="10000"
             android:textColor="@color/primary"
             android:textSize="14sp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="5dp"
             android:inputType="numberDecimal"
             android:background="@drawable/bg_grey_primary"/>
-
 
     </LinearLayout>
 
@@ -125,7 +123,7 @@
             android:text="Bayar"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:backgroundTint="@color/primary"/>
+            app:backgroundTint="@color/primary" />
     </RelativeLayout>
 
 </LinearLayout>

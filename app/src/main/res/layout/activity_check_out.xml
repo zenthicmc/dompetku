@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/btnBack"
-                android:layout_width="25sp"
-                android:layout_height="25sp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_arrow_back"/>
@@ -33,7 +33,7 @@
                 android:text="Pembayaran"
                 android:textStyle="bold"
                 android:textColor="@color/primary"
-                android:textSize="20sp"/>
+                android:textSize="17sp"/>
         </LinearLayout>
 
         <TextView
@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
+            android:textSize="14sp"
             android:text="Transfer pembayaran ke nomor rekening:"/>
 
         <RelativeLayout
@@ -96,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15sp"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:text="No Referensi"/>
 
         <TextView
@@ -112,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:text="Jumlah yang harus dibayar"/>
 
         <TextView
@@ -128,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Metode pembayaran"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:layout_marginTop="10sp"/>
 
         <TextView
@@ -145,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Status"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtStatus"
@@ -166,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:text="Tata cara pembayaran:"/>
 
         <LinearLayout
