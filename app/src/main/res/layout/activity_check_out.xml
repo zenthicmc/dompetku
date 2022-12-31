@@ -231,7 +231,7 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="15dp"
             android:background="@drawable/bg_primary"
-            android:text="Sudah Bayar"
+            android:text="Saya Sudah Bayar"
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:backgroundTint="@color/primary" />

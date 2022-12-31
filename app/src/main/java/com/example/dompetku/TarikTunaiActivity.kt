@@ -22,13 +22,14 @@ class TarikTunaiActivity : AppCompatActivity() {
     private lateinit var metodeName: TextView
     private lateinit var btnBack: ImageView
     private lateinit var editAmount: EditText
+    private lateinit var editRekening: EditText
     private lateinit var btn10k: TextView
     private lateinit var btn20k: TextView
     private lateinit var btn50k: TextView
     private lateinit var btn100k: TextView
     private lateinit var btn500k: TextView
     private lateinit var btn1000k: TextView
-    private lateinit var btnLanjut: RelativeLayout
+    private lateinit var btnLanjut: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,9 +47,12 @@ class TarikTunaiActivity : AppCompatActivity() {
         metodeName.text = metode["name"]
         Picasso.get().load(metode["icon"]).into(metodeIcon)
 
+        getSaldo()
+
         btnMethod = findViewById(R.id.btnMethod)
         btnBack = findViewById(R.id.btnBack)
         editAmount = findViewById(R.id.editAmount)
+        editRekening = findViewById(R.id.editRekening)
         btn10k = findViewById(R.id.btn10k)
         btn20k = findViewById(R.id.btn20k)
         btn50k = findViewById(R.id.btn50k)
@@ -116,21 +120,20 @@ class TarikTunaiActivity : AppCompatActivity() {
                 editAmount.error = "Jumlah tidak boleh kurang dari 10.000"
                 editAmount.requestFocus()
                 return@setOnClickListener
+            } else if(editRekening.text.toString().isEmpty()){
+                editRekening.error = "Rekening tidak boleh kosong"
+                editRekening.requestFocus()
+                return@setOnClickListener
+            } else {
+                val intent = Intent(this, KonfirmasiTarikTunaiActivity::class.java)
+                intent.putExtra("amount", editAmount.text.toString().trim())
+                intent.putExtra("rekening", editRekening.text.toString().trim())
+                startActivity(intent)
             }
-
-            val intent = Intent(this, KonfirmasiTransferActivity::class.java)
-            intent.putExtra("amount", editAmount.text.toString().trim())
-            intent.putExtra("name", metode)
-            intent.putExtra("icon", metodeIcon)
-            startActivity(intent)
         }
-
-        getData()
-
-
     }
 
-    private fun getData() {
+    private fun getSaldo() {
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/getprofile")
@@ -146,7 +149,8 @@ class TarikTunaiActivity : AppCompatActivity() {
                     val user = getJsonObject.getJSONObject("user")
 
                     if(response.getString("success").equals("true")) {
-                        setProfile(user)
+                        val decimalFormat = DecimalFormat("#,###")
+                        txtSaldo.text = decimalFormat.format(user.getInt("saldo")).toString()
 
                     }
                 }
@@ -155,12 +159,6 @@ class TarikTunaiActivity : AppCompatActivity() {
                     Log.d("error", error.toString())
                 }
             })
-    }
-
-    private fun setProfile(user: JSONObject) {
-        val decimalFormat = DecimalFormat("#,###")
-
-        txtSaldo.text = decimalFormat.format(user.getInt("saldo")).toString()
     }
 
     override fun onResume() {

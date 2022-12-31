@@ -88,7 +88,7 @@
 
     <EditText
         android:id="@+id/editAmount"
-        android:paddingStart="12sp"
+        android:paddingHorizontal="12sp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:hint="10000"

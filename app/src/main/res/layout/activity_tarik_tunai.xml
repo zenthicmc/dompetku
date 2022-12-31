@@ -110,35 +110,61 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/ic_arrow_right" />
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nominal"
-        android:textSize="15sp"
-        android:layout_marginTop="25dp"/>
+        android:text="Masukkan Nominal"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/editAmount"
+        android:paddingHorizontal="12sp"
         android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="10000"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_grey_primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Masukkan No Rekening"
+        android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="@color/primary"
-        android:textSize="25sp"
-        android:paddingVertical="10dp"
-        android:layout_marginBottom="5sp"/>
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editRekening"
+        android:paddingHorizontal="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_grey_primary"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pilih Nominal"
-        android:textSize="15sp"
-        android:layout_marginTop="25sp"
+        android:textSize="17sp"
+        android:layout_marginTop="15sp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
@@ -234,11 +260,12 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/btnLanjut"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnLanjut"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -247,7 +274,8 @@
             android:background="@drawable/bg_primary"
             android:text="Lanjut"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary"/>
     </RelativeLayout>
 
 </LinearLayout>
