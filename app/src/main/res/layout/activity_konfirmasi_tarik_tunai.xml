@@ -42,6 +42,7 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
+        android:id="@+id/txtAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rp 100,000"
@@ -66,12 +67,14 @@
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:id="@+id/metodeIcon"
             android:layout_width="35dp"
             android:layout_height="30dp"
             android:src="@drawable/logo_alfamart"
             android:layout_marginEnd="12dp"/>
 
         <TextView
+            android:id="@+id/metodeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alfamart"
@@ -115,6 +118,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/txtjumlahAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp 200,000"
@@ -140,6 +144,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/txtBiayaAdmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp 2,500"
@@ -164,6 +169,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/txtTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp 202,500"

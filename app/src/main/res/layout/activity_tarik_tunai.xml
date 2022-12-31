@@ -16,6 +16,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="25sp"
             android:layout_height="25sp"
             android:layout_gravity="center"
@@ -69,9 +70,9 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtSaldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3.222.000"
                 android:textColor="@color/primary"
                 android:textSize="25sp"
                 android:layout_toRightOf="@id/txtRp"
@@ -81,6 +82,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/btnMethod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -89,18 +91,19 @@
         android:layout_marginTop="15dp">
 
         <ImageView
-            android:id="@+id/logo_bri1"
+            android:id="@+id/metodeIcon"
             android:layout_width="40dp"
             android:layout_height="25dp"
             android:layout_alignParentStart="true"
             android:src="@drawable/logo_bri" />
 
         <TextView
-            android:id="@+id/textBRI"
+            android:id="@+id/metodeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/logo_bri1"
+            android:layout_marginStart="7dp"
+            android:layout_toRightOf="@+id/metodeIcon"
             android:text="BANK BRI"
             android:textColor="@color/primary"
             android:textSize="18sp"
@@ -121,9 +124,9 @@
         android:layout_marginTop="25dp"/>
 
     <EditText
+        android:id="@+id/editAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rp100,000"
         android:textStyle="bold"
         android:textColor="@color/primary"
         android:textSize="25sp"
@@ -139,49 +142,51 @@
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
+<!--    Start-->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="25dp"
-        android:gravity="center">
+        android:layout_marginTop="15dp">
 
         <LinearLayout
-            android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnNominal1"
+            <TextView
+                android:id="@+id/btn10k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:hint="10,000" />
 
-            <Button
-                android:id="@+id/btnDepoNominal2"
+            <TextView
+                android:id="@+id/btn20k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="20,000" />
 
-            <Button
-                android:id="@+id/btnNominal3"
+            <TextView
+                android:id="@+id/btn50k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
-                android:textStyle="bold"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="50,000" />
 
         </LinearLayout>
@@ -190,42 +195,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_gravity="center"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnNominal4"
+            <TextView
+                android:id="@+id/btn100k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
-                android:textStyle="bold"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:hint="100,000" />
 
-            <Button
-                android:id="@+id/btnDepoNominal5"
+            <TextView
+                android:id="@+id/btn500k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
-                android:textStyle="bold"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="500,000" />
 
-            <Button
-                android:id="@+id/btnNominal6"
+            <TextView
+                android:id="@+id/btn1000k"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:textStyle="bold"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/bg_stroke_depo"
                 android:textColorHint="@color/primary"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
                 android:hint="1,000,000" />
+
         </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/btnLanjut"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -233,8 +242,8 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/bg_primary"
             android:text="Lanjut"
             android:textAllCaps="false"
