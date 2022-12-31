@@ -38,6 +38,12 @@ class HomeFragment : Fragment() {
     private lateinit var btnWithdraw: LinearLayout
     private lateinit var btnTransfer: LinearLayout
 
+    // Menu topup & tagihan
+    private lateinit var btnListrik: LinearLayout
+    private lateinit var btnInternet: LinearLayout
+    private lateinit var btnGame: LinearLayout
+    private lateinit var btnVoucher: LinearLayout
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +58,29 @@ class HomeFragment : Fragment() {
         dataHome = ArrayList<DataHome>()
         photoProfile = view.findViewById(R.id.photoProfile)
 
+        // Menu topup & tagihan
+        btnListrik = view.findViewById(R.id.btnListrik)
+        btnInternet = view.findViewById(R.id.btnInternet)
+        btnGame = view.findViewById(R.id.btnGame)
+        btnVoucher = view.findViewById(R.id.btnVoucher)
+
+        btnListrik.setOnClickListener {
+            topupTagihan("listrik")
+        }
+
+        btnInternet.setOnClickListener {
+            topupTagihan("internet")
+        }
+
+        btnGame.setOnClickListener {
+            topupTagihan("game")
+        }
+
+        btnVoucher.setOnClickListener {
+            topupTagihan("voucher")
+        }
+
+        // get current data user
         getData()
 
         btnDeposit = view.findViewById(R.id.btnDeposit)
@@ -73,6 +102,12 @@ class HomeFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun topupTagihan(category: String) {
+        val intent = Intent(activity, TopupActivity::class.java)
+        intent.putExtra("category", category)
+        startActivity(intent)
     }
 
 
