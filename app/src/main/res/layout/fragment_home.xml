@@ -99,8 +99,8 @@
 
             <LinearLayout
                 android:id="@+id/btnDeposit"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
                 android:background="@drawable/bg_depo"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -121,8 +121,8 @@
 
             <LinearLayout
                 android:id="@+id/btnTransfer"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/bg_trans"
                 android:gravity="center"
@@ -144,8 +144,8 @@
 
             <LinearLayout
                 android:id="@+id/btnWithdraw"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/bg_tarik"
                 android:gravity="center"
@@ -176,7 +176,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:paddingHorizontal="25dp"
             android:text="Tagihan &amp; Top up"
             android:textColor="@color/primary"
@@ -189,124 +189,132 @@
             android:layout_marginTop="10dp"
             android:paddingHorizontal="25dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <HorizontalScrollView
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true">
 
                 <LinearLayout
-                    android:id="@+id/btnListrik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/bg_listrik"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_flash" />
-                    </LinearLayout>
-
-                    <TextView
+                        android:id="@+id/btnListrik"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Listrik"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+                        android:layout_alignParentStart="true"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/btnInternet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:layout_toRightOf="@+id/btnListrik"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_listrik"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_flash" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Listrik"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/bg_internet"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_internet" />
-                    </LinearLayout>
-
-                    <TextView
+                        android:id="@+id/btnInternet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Internet"
-                        android:textColor="@color/black" />
+                        android:layout_marginRight="30dp"
+                        android:layout_toRightOf="@+id/btnListrik"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_internet"
+                            android:gravity="center">
 
-                <LinearLayout
-                    android:id="@+id/btnGame"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:layout_toRightOf="@id/btnInternet"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_internet" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Internet"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/bg_game"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_game" />
-                    </LinearLayout>
-
-                    <TextView
+                        android:id="@+id/btnGame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Game"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+                        android:layout_marginRight="30dp"
+                        android:layout_toRightOf="@id/btnInternet"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/btnVoucher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/btnGame"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_game"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_game" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Game"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/bg_voucher"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_voucher" />
-                    </LinearLayout>
-
-                    <TextView
+                        android:id="@+id/btnVoucher"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Voucher"
-                        android:textColor="@color/black" />
+                        android:layout_toRightOf="@+id/btnGame"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_voucher"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_voucher" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Voucher"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+
+            </HorizontalScrollView>
+
+
         </RelativeLayout>
 
         <LinearLayout
@@ -317,7 +325,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:paddingHorizontal="25dp"
                 android:text="Transaksi Terbaru"
                 android:textColor="@color/primary"

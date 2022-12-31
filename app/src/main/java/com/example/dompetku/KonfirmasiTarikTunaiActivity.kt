@@ -49,7 +49,7 @@ class KonfirmasiTarikTunaiActivity : AppCompatActivity() {
         }
 
         btnLanjut.setOnClickListener {
-            val amount = intent.getStringExtra("amount")
+            val amount = (intent.getStringExtra("amount")?.toInt()?.minus(2500)).toString()
             val rekening = intent.getStringExtra("rekening")
 
             requestWithdraw(rekening.toString(), amount.toString())
@@ -87,8 +87,7 @@ class KonfirmasiTarikTunaiActivity : AppCompatActivity() {
                 override fun onResponse(response: JSONObject) {
                     Log.d("response", response.toString())
                     if (response.getString("success").equals("true")) {
-                        val intent =
-                            Intent(this@KonfirmasiTarikTunaiActivity, BerhasilActivity::class.java)
+                        val intent = Intent(this@KonfirmasiTarikTunaiActivity, BerhasilActivity::class.java)
                         intent.putExtra("title", "Withdraw Berhasil")
                         intent.putExtra("amount", amount)
                         startActivity(intent)

@@ -8,8 +8,12 @@ import android.view.WindowManager
 @Suppress("DEPRECATION")
 
 class SplashActivity : AppCompatActivity() {
+    private lateinit var sessionManager: SessionManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        sessionManager = SessionManager(this)
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -18,9 +22,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            val intent = Intent(this, WelcomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(sessionManager.isLogin() == true) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val intent = Intent(this, WelcomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, 3000)
     }
 }

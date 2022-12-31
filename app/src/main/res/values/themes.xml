@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Dompetku" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/primary</item>
@@ -12,7 +13,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
         <!-- Material3 attributes (needed if parent="Theme.MaterialComponents"). -->
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.Material3.DisplayLarge</item>
         <item name="textAppearanceDisplayMedium">@style/TextAppearance.Material3.DisplayMedium</item>
