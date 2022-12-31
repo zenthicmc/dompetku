@@ -16,6 +16,7 @@ import com.example.dompetku.adapter.AdapterMetode
 import com.example.dompetku.adapter.AdapterRiwayat
 import com.example.dompetku.dataclass.DataMetode
 import com.example.dompetku.dataclass.DataRiwayat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -72,7 +73,16 @@ class MetodeActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@MetodeActivity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             })
     }

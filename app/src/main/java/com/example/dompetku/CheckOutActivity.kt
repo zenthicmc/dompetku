@@ -11,6 +11,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import java.text.DecimalFormat
@@ -91,7 +92,16 @@ class CheckOutActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
 
+                    MaterialAlertDialogBuilder(this@CheckOutActivity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             })
     }

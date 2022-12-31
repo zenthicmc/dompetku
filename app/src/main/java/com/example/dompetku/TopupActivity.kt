@@ -17,6 +17,7 @@ import com.example.dompetku.adapter.AdapterRiwayat
 import com.example.dompetku.adapter.AdapterTopup
 import com.example.dompetku.dataclass.DataRiwayat
 import com.example.dompetku.dataclass.DataTopup
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -85,7 +86,16 @@ class TopupActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@TopupActivity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             })
 

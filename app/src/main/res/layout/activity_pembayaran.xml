@@ -87,6 +87,7 @@
         android:layout_marginTop="15dp">
 
         <TextView
+            android:id="@+id/txtKet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No Penerima"
@@ -104,6 +105,15 @@
             android:layout_marginTop="5dp"
             android:inputType="numberDecimal"
             android:background="@drawable/bg_grey_primary"/>
+
+        <TextView
+            android:id="@+id/txtHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Penerima"
+            android:textColor="@color/primary"
+            android:layout_marginTop="3dp"
+            android:textSize="11sp"/>
 
     </LinearLayout>
 

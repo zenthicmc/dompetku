@@ -137,10 +137,13 @@ class DepositActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@DepositActivity)
-                        .setTitle("Deposit Gagal")
-                        .setMessage("Silahkan coba lagi nanti")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

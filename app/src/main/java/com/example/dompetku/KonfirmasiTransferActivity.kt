@@ -109,10 +109,13 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@KonfirmasiTransferActivity)
-                        .setTitle("Transfer Gagal")
-                        .setMessage("Saldo anda tidak cukup")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

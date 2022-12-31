@@ -43,6 +43,7 @@ class AdapterTopup2(val context: Context, val topupList: ArrayList<DataTopup>): 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, PembayaranActivity::class.java)
             intent.putExtra("code", currentItem.code)
+            intent.putExtra("type", currentItem.type)
             startActivity(context, intent, null)
         }
 

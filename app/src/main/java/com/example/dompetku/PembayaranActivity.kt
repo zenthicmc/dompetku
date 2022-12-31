@@ -24,6 +24,8 @@ class PembayaranActivity : AppCompatActivity() {
     private lateinit var editReceiver: EditText
     private lateinit var btnBayar: Button
     private lateinit var sessionManager: SessionManager
+    private lateinit var txtKet: TextView
+    private lateinit var txtHelper: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +36,21 @@ class PembayaranActivity : AppCompatActivity() {
         editReceiver = findViewById(R.id.editReceiver)
         btnBayar = findViewById(R.id.btnBayar)
         sessionManager = SessionManager(this)
+        txtKet = findViewById(R.id.txtKet)
+        txtHelper = findViewById(R.id.txtHelper)
 
         getSaldo()
+
+        val type = intent.getStringExtra("type")
+        if(type.equals("data")) {
+            txtKet.text = "Masukkan Nomor Penerima"
+            txtHelper.text = "*Nomor penerima harus valid sesuai dengan operator yang dipilih"
+        } else if(type.equals("pulsa")) {
+            txtKet.text = "Masukkan Nomor Penerima"
+            txtHelper.text = "*Nomor penerima harus valid sesuai dengan operator yang dipilih"
+        } else {
+            txtKet.text = "Masukkan Customer ID"
+        }
 
         btnBack.setOnClickListener {
             finish()
@@ -84,10 +99,13 @@ class PembayaranActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@PembayaranActivity)
-                        .setTitle("Topup Gagal")
-                        .setMessage("Saldo anda tidak cukup")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()
