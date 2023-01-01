@@ -1,5 +1,8 @@
 package com.example.dompetku
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -30,6 +34,7 @@ class CheckOutActivity : AppCompatActivity() {
     private lateinit var txtReference: TextView
     private lateinit var btnBack: ImageView
     private lateinit var btnPay: Button
+    private lateinit var iconCopy: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +50,7 @@ class CheckOutActivity : AppCompatActivity() {
         txtReference = findViewById(R.id.txtReference)
         btnBack = findViewById(R.id.btnBack)
         btnPay = findViewById(R.id.btnPay)
+        iconCopy = findViewById(R.id.iconCopy)
 
         btnBack.setOnClickListener {
             finish()
@@ -52,6 +58,20 @@ class CheckOutActivity : AppCompatActivity() {
 
         btnPay.setOnClickListener {
             checkStatus()
+        }
+
+        iconCopy.setOnClickListener {
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("rek", txtRek.text.toString().trim())
+            clipboardManager.setPrimaryClip(clipData)
+
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Success")
+                .setMessage("No rekening berhasil disalin")
+                .setPositiveButton("OK") { dialog, which ->
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         getDetailDeposit()

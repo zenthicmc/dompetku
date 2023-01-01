@@ -2,12 +2,15 @@ package com.example.dompetku.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dompetku.CheckOutActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.dataclass.DataHome
@@ -45,6 +48,14 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
             "Success" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
             "Pending" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
             else -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
+        }
+
+        holder.itemView.setOnClickListener {
+            if(currentItem.type == "Deposit" && currentItem.status == "Pending") {
+                val intent = Intent(context, CheckOutActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                startActivity(context, intent, null)
+            }
         }
     }
 

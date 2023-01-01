@@ -116,11 +116,6 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    override fun onResume() {
-        super.onResume()
-        getData()
-    }
-
     private fun topupTagihan(category: String) {
         val intent = Intent(activity, TopupActivity::class.java)
         intent.putExtra("category", category)

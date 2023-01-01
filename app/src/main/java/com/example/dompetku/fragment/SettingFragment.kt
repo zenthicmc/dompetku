@@ -72,12 +72,6 @@ class SettingFragment : Fragment() {
         return view
     }
 
-    override fun onResume() {
-        super.onResume()
-        getUserProfile()
-        getUserStats()
-    }
-
     private fun getUserProfile() {
         val token = sessionManager.getToken()
 
