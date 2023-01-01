@@ -48,7 +48,7 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
         val decimalFormat = DecimalFormat("#,###")
 
         txtPhone.text = nohp
-        txtAmount.text = "Rp " + decimalFormat.format(amount.toInt()).toString()
+        txtAmount.text = "Rp " + decimalFormat.format(amount.toBigInteger()).toString()
         txtCatatan.text = catatan
 
         btnSend.setOnClickListener {

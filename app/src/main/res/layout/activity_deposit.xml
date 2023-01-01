@@ -55,7 +55,8 @@
             android:textColor="@color/primary"
             android:textSize="14sp"
             android:layout_marginTop="7dp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
+            android:maxLength="7"
             android:background="@drawable/bg_grey_primary"/>
 
     </LinearLayout>

@@ -103,8 +103,8 @@ class Transfer2Activity : AppCompatActivity() {
                 return@setOnClickListener
             }
             // check if amount is > 10000000
-            else if(editAmount.text.toString().toInt() > 10000000){
-                editAmount.error = "Jumlah tidak boleh lebih dari 10.000.000"
+            else if(editAmount.text.toString().toInt() > 1000000){
+                editAmount.error = "Jumlah tidak boleh lebih dari 1.000.000"
                 editAmount.requestFocus()
                 return@setOnClickListener
             }
