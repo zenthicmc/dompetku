@@ -1,6 +1,6 @@
 Dompetku
 ============
-[![GitHub Stars](https://img.shields.io/github/stars/IgorAntun/node-chat.svg)](https://github.com/zenthicmc/dompetku/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/IgorAntun/node-chat.svg)](https://github.com/zenthicmc/dompetku/issues) [![Current Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/zenthicmc/dompetku)
+[![GitHub Stars](https://img.shields.io/github/stars/zenthicmc/dompetku.svg)](https://github.com/zenthicmc/dompetku/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/zenthicmc/dompetku.svg)](https://github.com/zenthicmc/dompetku/issues) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/zenthicmc/dompetku)
 
 Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotlin   
 
