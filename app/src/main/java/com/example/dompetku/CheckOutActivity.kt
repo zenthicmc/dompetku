@@ -107,6 +107,11 @@ class CheckOutActivity : AppCompatActivity() {
                         txtRek.text = data.getString("pay_code")
                         txtMethod.text = data.getString("payment_method")
                         txtStatus.text = data.getString("status")
+                        if(data.getString("status").equals("PAID")) {
+                            txtStatus.setTextColor(resources.getColor(R.color.green))
+                        } else {
+                            txtStatus.setTextColor(resources.getColor(R.color.red))
+                        }
                         txtReference.text = data.getString("reference")
                     }
                 }
