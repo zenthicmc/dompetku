@@ -43,6 +43,8 @@ class HomeFragment : Fragment() {
     private lateinit var btnInternet: LinearLayout
     private lateinit var btnGame: LinearLayout
     private lateinit var btnVoucher: LinearLayout
+    private lateinit var btnEmoney: LinearLayout
+    private lateinit var btnPulsa: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +65,8 @@ class HomeFragment : Fragment() {
         btnInternet = view.findViewById(R.id.btnInternet)
         btnGame = view.findViewById(R.id.btnGame)
         btnVoucher = view.findViewById(R.id.btnVoucher)
+        btnEmoney = view.findViewById(R.id.btnEmoney)
+        btnPulsa = view.findViewById(R.id.btnPulsa)
 
         btnListrik.setOnClickListener {
             topupTagihan("listrik")
@@ -78,6 +82,14 @@ class HomeFragment : Fragment() {
 
         btnVoucher.setOnClickListener {
             topupTagihan("voucher")
+        }
+
+        btnEmoney.setOnClickListener {
+            topupTagihan("emoney")
+        }
+
+        btnPulsa.setOnClickListener {
+            topupTagihan("pulsa")
         }
 
         // get current data user
@@ -102,6 +114,11 @@ class HomeFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getData()
     }
 
     private fun topupTagihan(category: String) {

@@ -42,6 +42,11 @@ class RiwayatFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        getTransactions()
+    }
+
     private fun getTransactions() {
         val token = sessionManager.getToken()
 

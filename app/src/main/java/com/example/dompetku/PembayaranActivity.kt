@@ -42,14 +42,12 @@ class PembayaranActivity : AppCompatActivity() {
         getSaldo()
 
         val type = intent.getStringExtra("type")
-        if(type.equals("data")) {
-            txtKet.text = "Masukkan Nomor Penerima"
-            txtHelper.text = "*Nomor penerima harus valid sesuai dengan operator yang dipilih"
-        } else if(type.equals("pulsa")) {
+        if(type.equals("data") || type.equals("pulsa") || type.equals("etoll")) {
             txtKet.text = "Masukkan Nomor Penerima"
             txtHelper.text = "*Nomor penerima harus valid sesuai dengan operator yang dipilih"
         } else {
             txtKet.text = "Masukkan Customer ID"
+            txtHelper.text = ""
         }
 
         btnBack.setOnClickListener {

@@ -106,17 +106,17 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_depo" />
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/deposit2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:text="Deposit"
+                    android:layout_marginTop="3dp"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -129,17 +129,18 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_transaksi" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/transfer2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="3dp"
                     android:text="Transfer"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -152,17 +153,17 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_tarik_tunai" />
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/withdraw2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="3dp"
                     android:text="Withdraw"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -192,6 +193,7 @@
             <HorizontalScrollView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:scrollbars="none"
                 android:layout_centerHorizontal="true">
 
                 <LinearLayout
@@ -215,15 +217,16 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_flash" />
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/listrik" />
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Listrik"
+                            android:textSize="12sp"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -243,15 +246,16 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_internet" />
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/internet" />
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Internet"
+                            android:textSize="12sp"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -272,15 +276,16 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_game" />
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/game" />
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Game"
+                            android:textSize="12sp"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -290,6 +295,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/btnGame"
                         android:gravity="center"
+                        android:layout_marginRight="30dp"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -299,22 +305,78 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_voucher" />
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/voucher" />
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Voucher"
+                            android:textSize="12sp"
                             android:textColor="@color/black" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnEmoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnVoucher"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_emoney"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/emoney" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="E-money"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnPulsa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnEmoney"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/bg_pulsa"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/phone" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pulsa"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
-
             </HorizontalScrollView>
-
-
         </RelativeLayout>
 
         <LinearLayout
@@ -343,10 +405,7 @@
                 android:gravity="center_vertical"/>
 
         </LinearLayout>
-
-
     </LinearLayout>
-
 </LinearLayout>
 
 

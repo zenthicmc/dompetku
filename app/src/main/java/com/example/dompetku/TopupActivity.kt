@@ -50,6 +50,8 @@ class TopupActivity : AppCompatActivity() {
             "listrik" -> requestProducts(this, "listrik")
             "game" -> requestProducts(this, "game")
             "voucher" -> requestProducts(this, "voucher")
+            "emoney" -> requestProducts(this, "emoney")
+            "pulsa" -> requestProducts(this, "pulsa")
         }
     }
 
