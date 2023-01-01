@@ -93,7 +93,7 @@ class CheckOutActivity : AppCompatActivity() {
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
-                    Log.d("response deposit", response.toString())
+                    Log.d("response checkout", response.toString())
                     val data = response.getJSONObject("data")
 
                     val formated = SimpleDateFormat("dd-MM-yyyy HH:mm")
@@ -127,6 +127,11 @@ class CheckOutActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@CheckOutActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }
@@ -162,7 +167,13 @@ class CheckOutActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
 
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@CheckOutActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

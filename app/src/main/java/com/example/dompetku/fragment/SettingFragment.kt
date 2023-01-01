@@ -93,7 +93,13 @@ class SettingFragment : Fragment() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

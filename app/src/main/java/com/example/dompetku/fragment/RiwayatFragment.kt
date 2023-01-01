@@ -1,5 +1,6 @@
 package com.example.dompetku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.Data
 import android.util.Log
@@ -13,6 +14,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.example.dompetku.LoginActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.adapter.AdapterHome
@@ -75,7 +77,13 @@ class RiwayatFragment : Fragment() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

@@ -99,6 +99,12 @@ class Transfer1Activity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@Transfer1Activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
+
                 }
             })
     }
@@ -134,6 +140,11 @@ class Transfer1Activity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@Transfer1Activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

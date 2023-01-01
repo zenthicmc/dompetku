@@ -1,6 +1,7 @@
 package com.example.dompetku
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -89,6 +90,11 @@ class DetailTransferActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@DetailTransferActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

@@ -164,6 +164,11 @@ class Transfer2Activity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@Transfer2Activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

@@ -21,6 +21,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.example.dompetku.*
 import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.dataclass.DataHome
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import org.json.JSONArray
 import org.json.JSONObject
@@ -146,7 +147,13 @@ class HomeFragment : Fragment() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

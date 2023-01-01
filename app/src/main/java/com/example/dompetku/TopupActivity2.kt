@@ -1,6 +1,7 @@
 package com.example.dompetku
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -100,6 +101,11 @@ class TopupActivity2 : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@TopupActivity2, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
 

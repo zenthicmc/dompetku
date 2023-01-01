@@ -151,6 +151,11 @@ class DepositActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@DepositActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }
