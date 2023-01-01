@@ -91,10 +91,13 @@ class CreatePasswordActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@CreatePasswordActivity)
-                        .setTitle("Registrasi Gagal")
-                        .setMessage("Silahkan cek kembali data anda")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -29,7 +29,7 @@
             android:text="Konfirmasi Transfer"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -75,14 +75,32 @@
         android:layout_height="1dp"
         android:layout_gravity="center"
         android:background="@color/gray"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nominal"
-        android:textSize="17sp"
-        android:layout_marginTop="15dp"
+        android:text="Saldo Anda"
+        android:textSize="14sp"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 100,000"
+        android:textColor="@color/primary"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nominal Transfer"
+        android:textSize="15sp"
+        android:layout_marginTop="17dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
@@ -99,8 +117,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Catatan"
-        android:textSize="17sp"
-        android:layout_marginTop="15dp"
+        android:textSize="14sp"
+        android:layout_marginTop="17dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 

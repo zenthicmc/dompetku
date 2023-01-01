@@ -73,10 +73,13 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@LoginActivity)
                         .setTitle("Login Gagal")
-                        .setMessage("Nomor HP atau password salah")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

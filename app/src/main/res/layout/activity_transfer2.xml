@@ -10,15 +10,15 @@
     tools:context=".Transfer2Activity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -29,7 +29,7 @@
             android:text="Transfer"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -81,14 +81,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Masukkan Nominal"
-        android:textSize="17sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:textColor="@color/primary"
         android:layout_marginTop="25dp"/>
 
     <EditText
         android:id="@+id/editAmount"
-        android:paddingStart="12sp"
+        android:paddingHorizontal="12sp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:hint="10000"
@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pilih Nominal"
-        android:textSize="17sp"
+        android:textSize="14sp"
         android:layout_marginTop="25dp"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
@@ -203,7 +203,7 @@
         android:layout_marginTop="25sp"
         android:text="Tambah Catatan"
         android:textStyle="bold"
-        android:textSize="17sp"
+        android:textSize="14sp"
         android:textColor="@color/primary"/>
 
     <RelativeLayout

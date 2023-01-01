@@ -13,11 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -27,9 +28,8 @@
             android:layout_height="wrap_content"
             android:text="Pembayaran"
             android:textStyle="bold"
-            android:layout_gravity="center"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -69,9 +69,9 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtSaldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3.222.000"
                 android:textColor="@color/primary"
                 android:textSize="25sp"
                 android:layout_toRightOf="@id/txtRp"
@@ -87,20 +87,33 @@
         android:layout_marginTop="15dp">
 
         <TextView
+            android:id="@+id/txtKet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customer ID / No HP"
-            android:textColor="@color/primary"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="8sFzHUrg1k"
+            android:text="No Penerima"
             android:textColor="@color/primary"
             android:textStyle="bold"
-            android:textSize="25dp"/>
+            android:textSize="14sp"/>
 
+        <EditText
+            android:id="@+id/editReceiver"
+            android:paddingHorizontal="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/bg_grey_primary"/>
+
+        <TextView
+            android:id="@+id/txtHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Penerima"
+            android:textColor="@color/primary"
+            android:layout_marginTop="3dp"
+            android:textSize="11sp"/>
 
     </LinearLayout>
 
@@ -109,6 +122,8 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnBayar"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -117,7 +132,8 @@
             android:background="@drawable/bg_primary"
             android:text="Bayar"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary" />
     </RelativeLayout>
 
 </LinearLayout>

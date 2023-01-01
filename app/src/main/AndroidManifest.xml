@@ -14,6 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dompetku"
         tools:targetApi="31">
+
+        <service
+            android:name=".firebase.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT">
+                </action>
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".CheckOutActivity"
             android:exported="false">
@@ -43,56 +54,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Voucher"
+            android:name=".TopupActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PilihVoucherActivity"
+            android:name=".PembayaranActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".GameActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PilihGameActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".InternetActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PilihOperatorActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PembayaranListrikActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ListrikActivity"
+            android:name=".TopupActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

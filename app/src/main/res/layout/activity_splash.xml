@@ -18,7 +18,7 @@
         app:lottie_autoPlay="true"
         android:layout_gravity="center"
         android:scaleType="fitCenter"
-        app:lottie_loop="false"/>
+        app:lottie_loop="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,6 @@
         android:text="DOMPETKU"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginTop="15dp" />
+        android:textSize="30dp" />
 
 </LinearLayout>

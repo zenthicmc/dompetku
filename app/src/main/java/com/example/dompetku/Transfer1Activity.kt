@@ -20,6 +20,7 @@ import com.example.dompetku.adapter.AdapterMetode
 import com.example.dompetku.adapter.AdapterRecentUser
 import com.example.dompetku.dataclass.DataMetode
 import com.example.dompetku.dataclass.DataRecentUser
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -90,7 +91,16 @@ class Transfer1Activity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@Transfer1Activity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
             })
     }
