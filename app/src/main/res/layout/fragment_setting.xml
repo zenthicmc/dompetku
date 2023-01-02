@@ -264,9 +264,10 @@
             android:textColor="@color/primary"/>
 
         <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:src="@drawable/ic_arrow_right"/>
     </RelativeLayout>
 
@@ -291,9 +292,10 @@
             android:textColor="@color/primary"/>
 
         <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:src="@drawable/ic_arrow_right"/>
     </RelativeLayout>
 
@@ -317,9 +319,10 @@
             android:textColor="@color/merah"/>
 
         <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:src="@drawable/ic_arrow_right"/>
     </RelativeLayout>
 

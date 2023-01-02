@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="18dp"
-        android:paddingVertical="10dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal">
 
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="29 Okt 2022"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
         </LinearLayout>
     </RelativeLayout>
 
