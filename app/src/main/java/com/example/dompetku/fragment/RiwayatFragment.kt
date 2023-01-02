@@ -21,6 +21,7 @@ import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.adapter.AdapterRiwayat
 import com.example.dompetku.dataclass.DataHome
 import com.example.dompetku.dataclass.DataRiwayat
+import com.facebook.shimmer.ShimmerFrameLayout
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -29,6 +30,7 @@ class RiwayatFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataRiwayat : ArrayList<DataRiwayat>
     private lateinit var sessionManager: SessionManager
+    private lateinit var shimmer: ShimmerFrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +41,12 @@ class RiwayatFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerRiwayat)
         dataRiwayat = ArrayList<DataRiwayat>()
         sessionManager = SessionManager(activity)
+        shimmer = view.findViewById(R.id.shimmer)
 
+
+        // get data
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
         getTransactions()
         return view
     }
@@ -72,6 +79,9 @@ class RiwayatFragment : Fragment() {
 
                             recyclerView.layoutManager = LinearLayoutManager(activity)
                             recyclerView.adapter = activity?.let { AdapterRiwayat(it, dataRiwayat) }
+
+                            shimmer.visibility = View.GONE
+                            shimmer.startShimmer()
                         }
                     }
                 }

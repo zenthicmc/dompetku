@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.example.dompetku.*
 import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.dataclass.DataHome
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import org.json.JSONArray
@@ -38,6 +40,11 @@ class HomeFragment : Fragment() {
     private lateinit var btnDeposit: LinearLayout
     private lateinit var btnWithdraw: LinearLayout
     private lateinit var btnTransfer: LinearLayout
+    private lateinit var shimmer: ShimmerFrameLayout
+    private lateinit var shimmer2: ShimmerFrameLayout
+    private lateinit var shimmer3: ShimmerFrameLayout
+    private lateinit var home: LinearLayout
+    private lateinit var welcome: RelativeLayout
 
     // Menu topup & tagihan
     private lateinit var btnListrik: LinearLayout
@@ -60,6 +67,11 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerHome)
         dataHome = ArrayList<DataHome>()
         photoProfile = view.findViewById(R.id.photoProfile)
+        shimmer = view.findViewById(R.id.shimmer)
+        shimmer2 = view.findViewById(R.id.shimmer2)
+        shimmer3 = view.findViewById(R.id.shimmer3)
+        home = view.findViewById(R.id.home)
+        welcome = view.findViewById(R.id.welcome)
 
         // Menu topup & tagihan
         btnListrik = view.findViewById(R.id.btnListrik)
@@ -94,6 +106,17 @@ class HomeFragment : Fragment() {
         }
 
         // get current data user
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
+
+        shimmer2.visibility = View.VISIBLE
+        shimmer2.startShimmer()
+
+        shimmer3.visibility = View.VISIBLE
+        shimmer3.startShimmer()
+
+        home.visibility = View.GONE
+        welcome.visibility = View.GONE
         getData()
 
         btnDeposit = view.findViewById(R.id.btnDeposit)
@@ -143,6 +166,19 @@ class HomeFragment : Fragment() {
                     if(response.getString("success").equals("true")) {
                         setProfile(user)
                         setTransactions(transactions)
+
+                        // stop shimmer
+                        shimmer.stopShimmer()
+                        shimmer.visibility = View.GONE
+
+                        shimmer2.stopShimmer()
+                        shimmer2.visibility = View.GONE
+
+                        shimmer3.stopShimmer()
+                        shimmer3.visibility = View.GONE
+
+                        home.visibility = View.VISIBLE
+                        welcome.visibility = View.VISIBLE
                     }
                 }
 
