@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="25dp"
     tools:context=".CheckOutActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingHorizontal="25dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="15dp">
 
         <ImageView
@@ -39,6 +40,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingHorizontal="25dp"
             android:orientation="vertical">
 
             <TextView

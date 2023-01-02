@@ -34,9 +34,12 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
         val currentItem = riwayatList[position]
         val decimalFormat = DecimalFormat("#,###")
 
+        // format date to dd-mm-yyyy HH:mm
+        val date = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4) + " " + currentItem.date.substring(11,16)
+
         holder.txtType.text = currentItem.type
         holder.txtAmount.text = "Rp " + decimalFormat.format(currentItem.amount).toString()
-        holder.txtDate.text = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4)
+        holder.txtDate.text = date
         holder.txtStatus.text = currentItem.status
 
         // load icon
