@@ -48,6 +48,7 @@
         android:iconifiedByDefault="false"
         android:background="@drawable/bg_grey_primary"
         android:textSize="12sp"
+        android:inputType="number"
         android:queryHint="cari nomor telepon" />
 
     <TextView

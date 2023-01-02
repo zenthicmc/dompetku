@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dompetku.CheckOutActivity
+import com.example.dompetku.DetailTransferActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.dataclass.DataHome
@@ -51,8 +52,13 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
         }
 
         holder.itemView.setOnClickListener {
-            if(currentItem.type == "Deposit" && currentItem.status == "Pending") {
+            if(currentItem.type == "Deposit") {
                 val intent = Intent(context, CheckOutActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                startActivity(context, intent, null)
+            }
+            else if(currentItem.type == "Transfer") {
+                val intent = Intent(context, DetailTransferActivity::class.java)
                 intent.putExtra("id", currentItem.id)
                 startActivity(context, intent, null)
             }

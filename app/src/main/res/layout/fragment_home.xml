@@ -15,7 +15,25 @@
         android:orientation="vertical"
         android:paddingHorizontal="30dp">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer3"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_shimmer_row"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <RelativeLayout
+            android:id="@+id/welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp">
@@ -40,7 +58,25 @@
 
         </RelativeLayout>
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer2"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_shimmer_row"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <LinearLayout
+            android:id="@+id/home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -94,7 +130,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp">
 
             <LinearLayout
@@ -129,10 +165,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/transfer2" />
+                    android:src="@drawable/transfer3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -206,7 +242,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="20dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -234,7 +270,7 @@
                         android:id="@+id/btnInternet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="20dp"
                         android:layout_toRightOf="@+id/btnListrik"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -264,7 +300,7 @@
                         android:id="@+id/btnGame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="20dp"
                         android:layout_toRightOf="@id/btnInternet"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -295,7 +331,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/btnGame"
                         android:gravity="center"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="20dp"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -323,7 +359,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/btnVoucher"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="20dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -394,6 +430,25 @@
                 android:textSize="14dp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/card_shimmer"/>
+                    <include layout="@layout/card_shimmer"/>
+                    <include layout="@layout/card_shimmer"/>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerHome"

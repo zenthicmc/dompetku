@@ -46,9 +46,7 @@ class Transfer1Activity : AppCompatActivity() {
         btnLanjut = findViewById(R.id.btnLanjut)
         btnLanjut.setOnClickListener {
             if (editHp.query.toString().isNotEmpty()) {
-                val intent = Intent(this, Transfer2Activity::class.java)
-                intent.putExtra("nohp", editHp.query.toString())
-                startActivity(intent)
+                checkHp(editHp.query.toString(), this)
             }
         }
 
@@ -101,6 +99,52 @@ class Transfer1Activity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@Transfer1Activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+            })
+    }
+
+    private fun checkHp(noHp: String, context: Context) {
+        val token = sessionManager.getToken()
+
+        AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/phone/$noHp")
+            .addHeaders("Authorization", "Bearer $token")
+            .setTag("recents")
+            .setPriority(Priority.LOW)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject) {
+                    Log.d("response check", response.toString())
+                    val data: JSONArray = response.getJSONArray("data")
+
+                    if(response.getString("code").equals("200")) {
+                        val intent = Intent(context, Transfer2Activity::class.java)
+                        intent.putExtra("nohp", noHp)
+                        startActivity(intent)
+                    }
+                }
+
+                override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@Transfer1Activity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@Transfer1Activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

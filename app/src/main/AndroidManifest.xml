@@ -47,7 +47,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".DetailTransaksiActivity"
+            android:name=".DetailTransferActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

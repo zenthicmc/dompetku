@@ -48,7 +48,7 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
         val decimalFormat = DecimalFormat("#,###")
 
         txtPhone.text = nohp
-        txtAmount.text = "Rp " + decimalFormat.format(amount.toInt()).toString()
+        txtAmount.text = "Rp " + decimalFormat.format(amount.toBigInteger()).toString()
         txtCatatan.text = catatan
 
         btnSend.setOnClickListener {
@@ -81,7 +81,21 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@KonfirmasiTransferActivity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@KonfirmasiTransferActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }
@@ -119,6 +133,11 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@KonfirmasiTransferActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }
