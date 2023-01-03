@@ -50,7 +50,19 @@ class EditProfilActivity : AppCompatActivity() {
             val hp = editNomor.text.toString().trim()
             val email = editEmail.text.toString().trim()
 
-            updateUser(name, hp, email)
+            if (name.isEmpty()) {
+                editName.error = "Name tidak boleh kosong"
+                editName.requestFocus()
+            } else if (hp.isEmpty()) {
+                editNomor.error = "Nomor tidak boleh kosong"
+                editNomor.requestFocus()
+            }else if (email.isEmpty()) {
+                editEmail.error = "Email tidak boleh kosong"
+                editEmail.requestFocus()
+            }else {
+                updateUser(name, hp, email)
+            }
+
         }
 
         getUser()
