@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -33,16 +34,16 @@
                 android:layout_height="wrap_content"
                 android:text="Deposit"
                 android:layout_marginBottom="4sp"
-                android:textColor="@color/black"
+                android:textColor="@color/primary"
                 android:textStyle="bold"
-                android:textSize="15sp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/txtDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15 Nov 2022 - 19:20"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,7 +61,7 @@
                 android:text="+RP 900,000"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txtStatus"
@@ -70,7 +71,7 @@
                 android:text="Uang masuk"
                 android:textColor="@color/primary"
                 android:textStyle="bold"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
         </LinearLayout>
     </RelativeLayout>
 

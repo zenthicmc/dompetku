@@ -13,11 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="35dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -28,209 +29,23 @@
             android:text="Pilih Metode"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VIA ATM"
+        android:text="VIRTUAL ACCOUNT"
         android:textColor="@color/primary"
         android:textStyle="bold"/>
 
-    <LinearLayout
-        android:layout_below="@+id/bank1"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMetode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_bri"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/gray"
-        android:layout_marginTop="10dp"/>
-
-    <LinearLayout
-        android:layout_below="@+id/bank2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_bri"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/gray"
-        android:layout_marginTop="10dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_bri"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VIA GERAI"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
-        android:layout_marginTop="25dp"/>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_alfamart"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/gray"
-        android:layout_marginTop="10dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_alfamart"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/gray"
-        android:layout_marginTop="10dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
->
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/logo_alfamart"
-            android:layout_marginEnd="12dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK RAKYAT INDONESIA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"/>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/bg_primary"
-            android:text="Ubah"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-    </RelativeLayout>
+        android:elevation="1dp"
+        android:layout_marginHorizontal="2dp"
+        tools:listitem="@layout/card_metode"
+        android:gravity="center_vertical"/>
 
 </LinearLayout>

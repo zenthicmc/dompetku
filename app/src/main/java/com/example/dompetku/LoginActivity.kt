@@ -1,12 +1,12 @@
 package com.example.dompetku
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -73,10 +73,13 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@LoginActivity)
                         .setTitle("Login Gagal")
-                        .setMessage("Nomor HP atau password salah")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

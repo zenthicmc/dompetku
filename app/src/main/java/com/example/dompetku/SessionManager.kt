@@ -24,6 +24,21 @@ class SessionManager(var context: Context?) {
         editor?.commit()
     }
 
+    fun setMetode(code: String?, name: String?, icon: String?) {
+        editor?.putString("code", code)
+        editor?.putString("name", name)
+        editor?.putString("icon", icon)
+        editor?.commit()
+    }
+
+    fun getMetode(): HashMap<String, String?> {
+        val metode = HashMap<String, String?>()
+        metode["code"] = pref?.getString("code", "BRIVA")
+        metode["name"] = pref?.getString("name", "BRI Virtual Account")
+        metode["icon"] = pref?.getString("icon", "https://tripay.co.id/images/payment-channel/8WQ3APST5s1579461828.png")
+        return metode
+    }
+
     fun getToken(): String? {
         return pref?.getString("token", "")
     }

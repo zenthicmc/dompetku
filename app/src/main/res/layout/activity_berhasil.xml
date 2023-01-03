@@ -7,56 +7,84 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="25dp"
-    android:background="@color/primary"
     tools:context=".BerhasilActivity">
-
-    <ImageView
-        android:layout_width="25sp"
-        android:layout_height="25sp"
-        android:src="@drawable/ic_arrow_back_white"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center">
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/image_done"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"/>
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_arrow_back"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Top Up Berhasil"
-            android:textSize="25dp"
+            android:text="Kembali"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Jumlah Deposit"
-            android:textSize="15dp"
-            android:layout_marginTop="50dp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Rp100,000"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginTop="10sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/primary"
+            android:textSize="17sp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="45dp"
+        android:gravity="center">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:lottie_rawRes="@raw/success_animated"
+                app:lottie_autoPlay="true"
+                android:layout_gravity="center"
+                app:lottie_loop="false"/>
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Top Up Berhasil"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Jumlah Nominal"
+                android:textSize="15dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:id="@+id/txtAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Rp100,000"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10sp"
+                android:textColor="@color/primary"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

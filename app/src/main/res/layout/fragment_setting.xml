@@ -1,67 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragment.SettingFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/primary">
+        tools:context=".fragment.SettingFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pengaturan"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:paddingLeft="25sp"
-        android:paddingTop="25sp"
-        android:textColor="@color/white"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/model_ssst4"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kyle April"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="15sp"
-            android:textSize="20sp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="082XXXXXXXXX"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            android:layout_marginBottom="35sp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"/>
-
-            <!--Start -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
+            android:orientation="vertical"
+            android:background="@color/primary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:paddingLeft="25sp"
+                android:paddingTop="25sp"
+                android:textColor="@color/white"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer1"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/gray" />
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/bg_shimmer_circle"/>
+
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/bg_shimmer_row"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15sp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="15dp"
+                        android:background="@drawable/bg_shimmer_row"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/photoProfile"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/profil_placeholder"/>
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15sp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/txtHp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="35sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+
+
+            <!--Start -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/gray" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/bg_shimmer_row"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
                 <RelativeLayout
+                    android:id="@+id/stats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -71,8 +156,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="12sp"
-                        android:padding="20dp"
+                        android:paddingVertical="20dp"
+                        android:layout_toStartOf="@+id/lineCenter"
+                        android:layout_marginEnd="35dp"
                         android:layout_gravity="center">
 
                         <ImageView
@@ -98,9 +184,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/txtUangMasuk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rp 1.399.000"
+                                android:text="Rp"
                                 android:textColor="@color/white"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -113,16 +200,15 @@
                         android:layout_height="75dp"
                         android:layout_centerInParent="true"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="30dp"
                         android:background="@color/gray" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:padding="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="12dp">
+                        android:paddingVertical="20dp"
+                        android:layout_marginStart="35dp"
+                        android:layout_toEndOf="@+id/lineCenter">
 
                         <ImageView
                             android:id="@+id/uangKeluar"
@@ -148,9 +234,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/txtUangKeluar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rp 1.399.000"
+                                android:text="Rp"
                                 android:textColor="@color/white"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -162,83 +249,93 @@
             </LinearLayout> <!-- ttup Start -->
         </LinearLayout> <!--Frame -->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="25dp"
-        android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
-        android:layout_marginTop="30dp">
-
-        <TextView
-            android:id="@+id/ubahProfil"
+        <!--    Edit Profil-->
+        <RelativeLayout
+            android:id="@+id/btnEditProfil"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edit Profil"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"/>
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/bg_setting_primary"
+            android:padding="15sp"
+            android:layout_marginTop="30dp">
 
-        <ImageView
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/ubahProfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profil"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="25dp"
-        android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
-        android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_arrow_right"/>
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tentangKami"
+        <!--    Tentang Kami-->
+        <RelativeLayout
+            android:id="@+id/btnTentangKami"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tentang Kami"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"/>
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/bg_setting_primary"
+            android:padding="15sp"
+            android:layout_marginTop="15dp">
 
-        <ImageView
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tentangKami"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tentang Kami"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="25dp"
-        android:background="@drawable/bg_setting_primary"
-        android:padding="15sp"
-        android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_arrow_right"/>
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/keluar"
+        <RelativeLayout
+            android:id="@+id/btnLogout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Keluar"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/merah"/>
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="25dp"
+            android:gravity="center"
+            android:background="@drawable/bg_setting_primary"
+            android:padding="15sp"
+            android:layout_marginTop="15dp">
 
-        <ImageView
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/keluar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keluar"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/merah"/>
 
-
-</LinearLayout>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_arrow_right"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 

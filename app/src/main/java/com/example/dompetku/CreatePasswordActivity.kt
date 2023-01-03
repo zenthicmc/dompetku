@@ -3,7 +3,6 @@ package com.example.dompetku
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -14,7 +13,6 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 import org.json.JSONObject
 
 
@@ -91,10 +89,13 @@ class CreatePasswordActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
                     MaterialAlertDialogBuilder(this@CreatePasswordActivity)
-                        .setTitle("Registrasi Gagal")
-                        .setMessage("Silahkan cek kembali data anda")
-                        .setPositiveButton("Ok") { dialog, which ->
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
                             dialog.dismiss()
                         }
                         .show()

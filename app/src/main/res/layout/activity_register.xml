@@ -19,18 +19,19 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="35dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ilusi_dompetku"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/ilus5_dompetku"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
-                android:textSize="30sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary"/>
 
@@ -39,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
                 android:textColor="@color/primary"
-                android:textSize="16sp"
-                android:text="Silahkan lengkapi form untuk mendaftar!"/>
+                android:textSize="14sp"
+                android:text="Silahkan lengkapi form ini untuk mendaftar"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

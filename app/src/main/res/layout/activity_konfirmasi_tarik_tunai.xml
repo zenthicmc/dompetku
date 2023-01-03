@@ -12,11 +12,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
 
         <ImageView
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_arrow_back"/>
@@ -26,36 +28,18 @@
             android:layout_height="wrap_content"
             android:text="Tarik Tunai"
             android:textStyle="bold"
-            android:layout_gravity="center"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nominal"
+        android:text="Tarik Tunai Di"
         android:textSize="15sp"
         android:textStyle="bold"
         android:textColor="@color/primary"
         android:layout_marginTop="25dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rp 100,000"
-        android:textColor="@color/primary"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tarik tunai di"
-        android:textSize="15sp"
-        android:layout_marginTop="25sp"
-        android:textColor="@color/primary"
-        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,17 +48,16 @@
         android:layout_marginTop="10dp">
 
         <ImageView
-            android:layout_width="35dp"
+            android:id="@+id/metodeIcon"
+            android:layout_width="45dp"
             android:layout_height="30dp"
-            android:src="@drawable/logo_alfamart"
             android:layout_marginEnd="12dp"/>
 
         <TextView
+            android:id="@+id/metodeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alfamart"
             android:textSize="15sp"
-            android:textStyle="bold"
             android:layout_gravity="center"
             android:textColor="@color/primary"/>
 
@@ -85,8 +68,8 @@
         android:layout_height="1dp"
         android:layout_gravity="center"
         android:background="@color/gray"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,8 +77,33 @@
         android:text="Detail Penarikan"
         android:textStyle="bold"
         android:textColor="@color/primary"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginBottom="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:paddingEnd="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Rekening"
+            android:textSize="14sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtRekening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textColor="@color/primary"
+            android:textSize="14sp" />
+    </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -107,19 +115,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jumlah Nominal"
-                android:textSize="15sp"
+                android:text="Subtotal"
+                android:textSize="14sp"
                 android:textColor="@color/primary"
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/txtSubtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rp 200,000"
-                android:textSize="15sp"
+                android:layout_alignParentRight="true"
                 android:textColor="@color/primary"
-                android:textStyle="bold"
-                android:layout_alignParentRight="true"/>
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -133,18 +140,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Biaya Admin"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textColor="@color/primary"
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/txtBiayaAdmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp 2,500"
                 android:layout_alignParentRight="true"
-                android:textSize="15sp"
-                android:textColor="@color/primary"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                android:textColor="@color/primary" />
         </RelativeLayout>
 
     <RelativeLayout
@@ -156,19 +163,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Biaya"
-            android:textSize="15sp"
+            android:text="Total"
+            android:textSize="14sp"
             android:textColor="@color/primary"
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/txtTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rp 202,500"
             android:layout_alignParentRight="true"
-            android:textSize="15sp"
             android:textColor="@color/primary"
-            android:textStyle="bold"/>
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -176,6 +182,8 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnLanjut"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -184,7 +192,8 @@
             android:background="@drawable/bg_primary"
             android:text="Lanjut"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary"/>
     </RelativeLayout>
 
 </LinearLayout>

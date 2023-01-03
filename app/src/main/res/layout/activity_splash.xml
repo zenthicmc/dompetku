@@ -10,11 +10,15 @@
     android:background="@color/primary"
     tools:context=".SplashActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/wallet_logo" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:lottie_rawRes="@raw/wallet_logo_animated"
+        app:lottie_autoPlay="true"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        app:lottie_loop="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +26,6 @@
         android:text="DOMPETKU"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginTop="15dp" />
+        android:textSize="30dp" />
 
 </LinearLayout>

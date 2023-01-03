@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="25dp"
+    tools:context=".TentangKamiActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_arrow_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tentang Kami"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Dompetku adalah aplikasi dompet digital yang menawarkan kemudahan dan keamanan dalam mengelola dan melakukan transaksi dengan uang digital, seperti mata uang elektronik. Pengguna dapat menggunakan aplikasi ini untuk membayar belanjaan, mentransfer uang kepada orang lain, dan memantau keuangan pribadi mereka dari perangkat Android mereka."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:text="Aplikasi ini dilengkapi dengan fitur-fitur yang memudahkan pengguna dalam mengelola keuangan digital mereka, seperti integrasi dengan layanan pembayaran online populer. Dompetku juga memiliki desain yang intuitif dan mudah digunakan, sehingga pengguna dapat dengan cepat memahami dan menggunakan semua fitur yang tersedia."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:text="Jika Anda ingin memiliki dompet digital yang aman, mudah digunakan, dan memiliki banyak fitur yang berguna, Dompetku adalah aplikasi yang tepat untuk Anda."/>
+
+</LinearLayout>

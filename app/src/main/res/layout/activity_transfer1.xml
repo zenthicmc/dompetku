@@ -10,17 +10,18 @@
     tools:context=".Transfer1Activity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="35dp">
+        android:layout_marginBottom="25dp">
 
         <ImageView
-            android:layout_width="25sp"
-            android:layout_height="25sp"
+            android:id="@+id/btnBack"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_arrow_back"/>
+            android:src="@drawable/ic_arrow_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,25 +29,27 @@
             android:text="Transfer"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="@color/primary"
-        android:text="Masukan no telepon"/>
+        android:text="Masukkan No Telepon"/>
 
     <SearchView
-        android:id="@+id/idSV"
+        android:id="@+id/editHp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="7dp"
         android:iconifiedByDefault="false"
         android:background="@drawable/bg_grey_primary"
-        android:queryHint="cari nomor telepon"/>
+        android:textSize="12sp"
+        android:inputType="number"
+        android:queryHint="cari nomor telepon" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,54 +57,24 @@
         android:text="Kirim Cepat"
         android:textStyle="bold"
         android:textColor="@color/primary"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:layout_marginTop="15dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_grey_primary"
-        android:padding="20dp"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="7dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/photoProfile1"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="30dp"
-            android:src="@drawable/model_ssst4"/>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/photoProfile2"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="35dp"
-            android:layout_toRightOf="@id/photoProfile1"
-            android:src="@drawable/model_ssst4"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/photoProfile3"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="30dp"
-            android:layout_toRightOf="@id/photoProfile2"
-            android:src="@drawable/model_ssst4"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/photoProfile4"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/model_ssst4"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/photoProfile5"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_below="@id/photoProfile4"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/model_ssst4"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            tools:listitem="@layout/card_user_recent"
+            android:gravity="center_vertical"/>
 
     </RelativeLayout>
 
@@ -110,6 +83,9 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/btnLanjut"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            app:backgroundTint="@color/primary"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"

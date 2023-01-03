@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "912768766309",
+    "project_id": "messenger-40dee",
+    "storage_bucket": "messenger-40dee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912768766309:android:d5e7a24176a2562140118c",
+        "android_client_info": {
+          "package_name": "com.example.dompetku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912768766309-aqs3cl15bqmr2unm9l3kemdf4i8vt1fh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dompetku",
+            "certificate_hash": "e2a71d0d5c9a63b37de6e0d1ba0d2a511ac41c4b"
+          }
+        },
+        {
+          "client_id": "912768766309-rns56t02gcafvadb8le30q8i8qeurgh7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhaVOKjofbCXzR2r4cQmGl9E_0x8zeM4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912768766309-rns56t02gcafvadb8le30q8i8qeurgh7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
