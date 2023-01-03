@@ -1,6 +1,6 @@
 Dompetku
 ============
-[![GitHub Stars](https://img.shields.io/github/stars/zenthicmc/dompetku.svg)](https://github.com/zenthicmc/dompetku/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/zenthicmc/dompetku.svg)](https://github.com/zenthicmc/dompetku/issues) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/zenthicmc/dompetku)
+[![GitHub Stars](https://img.shields.io/github/stars/zenthicmc/dompetku.svg?style=for-the-badge)](https://github.com/zenthicmc/dompetku/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/zenthicmc/dompetku.svg?style=for-the-badge)](https://github.com/zenthicmc/dompetku/issues) [![Current Version](https://img.shields.io/github/v/release/zenthicmc/dompetku?include_prereleases&style=for-the-badge)](https://github.com/zenthicmc/dompetku) [![Downloads](https://img.shields.io/github/downloads/zenthicmc/dompetku/total?style=for-the-badge)](https://github.com/zenthicmc/dompetku) 
 
 Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotlin   
 
@@ -18,10 +18,8 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 - Patungan [Coming soon]
 
 ---
-## Instalasi
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
-
-You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
+## Dowload
+Lorem ipsum
 
 ---
 
