@@ -3,10 +3,10 @@ package com.example.dompetku.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -18,13 +18,10 @@ import com.example.dompetku.LoginActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.adapter.AdapterNotifikasi
-import com.example.dompetku.adapter.AdapterRiwayat
 import com.example.dompetku.dataclass.DataNotifikasi
-import com.example.dompetku.dataclass.DataRiwayat
 import com.facebook.shimmer.ShimmerFrameLayout
 import org.json.JSONArray
 import org.json.JSONObject
-import java.text.DecimalFormat
 
 
 class NotifikasiFragment : Fragment() {

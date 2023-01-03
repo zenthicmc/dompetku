@@ -232,193 +232,23 @@
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="25dp">
 
-                <HorizontalScrollView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:scrollbars="none"
-                    android:layout_centerHorizontal="true">
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:id="@+id/btnListrik"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_marginRight="20dp"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_listrik"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@drawable/listrik" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Listrik"
-                                android:textSize="12sp"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/btnInternet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
-                            android:layout_toRightOf="@+id/btnListrik"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_internet"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@drawable/internet" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Internet"
-                                android:textSize="12sp"
-                                android:textColor="@color/black" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/btnGame"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
-                            android:layout_toRightOf="@id/btnInternet"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_game"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@drawable/game" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Game"
-                                android:textSize="12sp"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/btnVoucher"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/btnGame"
-                            android:gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_voucher"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:src="@drawable/voucher" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Voucher"
-                                android:textSize="12sp"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/btnEmoney"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/btnVoucher"
-                            android:layout_marginRight="20dp"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_emoney"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="22dp"
-                                    android:layout_height="22dp"
-                                    android:src="@drawable/emoney" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="E-money"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/btnPulsa"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/btnEmoney"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/bg_pulsa"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="22dp"
-                                    android:layout_height="22dp"
-                                    android:src="@drawable/phone" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Pulsa"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-                        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="1dp"
+                            android:layout_marginHorizontal="2dp"
+                            tools:listitem="@layout/card_menu"
+                            tools:orientation="horizontal"
+                            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:gravity="center_vertical"/>
 
                     </LinearLayout>
-                </HorizontalScrollView>
             </RelativeLayout>
 
             <LinearLayout

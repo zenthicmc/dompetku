@@ -1,11 +1,8 @@
 package com.example.dompetku
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import androidx.fragment.app.FragmentContainerView
 import com.example.dompetku.fragment.HomeFragment
 import com.example.dompetku.fragment.NotifikasiFragment

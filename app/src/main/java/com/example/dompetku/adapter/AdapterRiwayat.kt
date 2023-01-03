@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dompetku.*
-import com.example.dompetku.dataclass.DataHome
 import com.example.dompetku.dataclass.DataRiwayat
 import com.squareup.picasso.Picasso
 import java.text.DecimalFormat

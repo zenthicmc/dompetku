@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.getSystemService
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -20,7 +19,6 @@ import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
-import java.util.Date
 import java.util.*
 
 class CheckOutActivity : AppCompatActivity() {

@@ -1,8 +1,8 @@
 package com.example.dompetku
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 class TentangKamiActivity : AppCompatActivity() {
     private lateinit var btnBack: ImageView

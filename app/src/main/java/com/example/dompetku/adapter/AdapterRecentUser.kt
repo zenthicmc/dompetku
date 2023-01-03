@@ -1,6 +1,5 @@
 package com.example.dompetku.adapter
 
-import com.example.dompetku.dataclass.DataRecentUser
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -14,10 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.Transfer2Activity
-import com.example.dompetku.dataclass.DataHome
-import com.example.dompetku.dataclass.DataRiwayat
+import com.example.dompetku.dataclass.DataRecentUser
 import com.squareup.picasso.Picasso
-import java.text.DecimalFormat
 
 @SuppressLint("RecyclerView")
 

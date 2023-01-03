@@ -2,7 +2,6 @@ package com.example.dompetku.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Data
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,25 +17,26 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
-import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.example.dompetku.*
 import com.example.dompetku.adapter.AdapterHome
+import com.example.dompetku.adapter.AdapterMenu
 import com.example.dompetku.dataclass.DataHome
+import com.example.dompetku.dataclass.DataMenu
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.DecimalFormat
-
 
 class HomeFragment : Fragment() {
     private lateinit var sessionManager: SessionManager
     private lateinit var txtName: TextView
     private lateinit var txtSaldo: TextView
     private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerMenu: RecyclerView
     private lateinit var dataHome : ArrayList<DataHome>
+    private lateinit var dataMenu : ArrayList<DataMenu>
     private lateinit var photoProfile: ImageView
     private lateinit var btnDeposit: LinearLayout
     private lateinit var btnWithdraw: LinearLayout
@@ -47,14 +47,6 @@ class HomeFragment : Fragment() {
     private lateinit var home: LinearLayout
     private lateinit var welcome: RelativeLayout
     private lateinit var swipe: SwipeRefreshLayout
-
-    // Menu topup & tagihan
-    private lateinit var btnListrik: LinearLayout
-    private lateinit var btnInternet: LinearLayout
-    private lateinit var btnGame: LinearLayout
-    private lateinit var btnVoucher: LinearLayout
-    private lateinit var btnEmoney: LinearLayout
-    private lateinit var btnPulsa: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,7 +59,9 @@ class HomeFragment : Fragment() {
         txtName = view.findViewById(R.id.txtName)
         txtSaldo = view.findViewById(R.id.txtSaldo)
         recyclerView = view.findViewById(R.id.recyclerHome)
+        recyclerMenu = view.findViewById(R.id.recyclerMenu)
         dataHome = ArrayList<DataHome>()
+        dataMenu = ArrayList<DataMenu>()
         photoProfile = view.findViewById(R.id.photoProfile)
         shimmer = view.findViewById(R.id.shimmer)
         shimmer2 = view.findViewById(R.id.shimmer2)
@@ -75,38 +69,6 @@ class HomeFragment : Fragment() {
         home = view.findViewById(R.id.home)
         welcome = view.findViewById(R.id.welcome)
         swipe = view.findViewById(R.id.swipe)
-
-        // Menu topup & tagihan
-        btnListrik = view.findViewById(R.id.btnListrik)
-        btnInternet = view.findViewById(R.id.btnInternet)
-        btnGame = view.findViewById(R.id.btnGame)
-        btnVoucher = view.findViewById(R.id.btnVoucher)
-        btnEmoney = view.findViewById(R.id.btnEmoney)
-        btnPulsa = view.findViewById(R.id.btnPulsa)
-
-        btnListrik.setOnClickListener {
-            topupTagihan("listrik")
-        }
-
-        btnInternet.setOnClickListener {
-            topupTagihan("internet")
-        }
-
-        btnGame.setOnClickListener {
-            topupTagihan("game")
-        }
-
-        btnVoucher.setOnClickListener {
-            topupTagihan("voucher")
-        }
-
-        btnEmoney.setOnClickListener {
-            topupTagihan("emoney")
-        }
-
-        btnPulsa.setOnClickListener {
-            topupTagihan("pulsa")
-        }
 
         btnDeposit = view.findViewById(R.id.btnDeposit)
         btnDeposit.setOnClickListener {
@@ -132,14 +94,21 @@ class HomeFragment : Fragment() {
             swipe.isRefreshing = false
         }
 
+        generateMenus()
         getData()
         return view
     }
 
-    private fun topupTagihan(category: String) {
-        val intent = Intent(activity, TopupActivity::class.java)
-        intent.putExtra("category", category)
-        startActivity(intent)
+    private fun generateMenus() {
+        dataMenu.add(DataMenu("btnListrik", "Listrik", "listrik", R.drawable.bg_listrik, R.drawable.listrik))
+        dataMenu.add(DataMenu("btnInternet", "Internet", "internet", R.drawable.bg_internet, R.drawable.internet))
+        dataMenu.add(DataMenu("btnGame", "Game", "game", R.drawable.bg_game, R.drawable.game))
+        dataMenu.add(DataMenu("btnVoucher", "Voucher", "voucher", R.drawable.bg_voucher, R.drawable.voucher))
+        dataMenu.add(DataMenu("btnEmoney", "E-Money", "emoney", R.drawable.bg_emoney, R.drawable.emoney))
+        dataMenu.add(DataMenu("btnPulsa", "Pulsa", "pulsa", R.drawable.bg_pulsa, R.drawable.phone))
+
+        recyclerMenu.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        recyclerMenu.adapter = activity?.let { AdapterMenu(it, dataMenu) }
     }
 
 
