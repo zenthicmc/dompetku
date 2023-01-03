@@ -18,7 +18,7 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 - Patungan [Coming soon]
 
 ---
-## Dowload
+## Download
 Lorem ipsum
 
 ---
