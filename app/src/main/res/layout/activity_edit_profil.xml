@@ -62,6 +62,7 @@
             android:textSize="14sp"/>
 
         <EditText
+            android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kaesang Pengarep"/>
@@ -73,6 +74,7 @@
             android:textSize="14sp"/>
 
         <EditText
+            android:id="@+id/editNomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0821245645747"/>
@@ -84,6 +86,7 @@
             android:layout_marginTop="14sp"/>
 
         <EditText
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="kaesang@gmail.com" />
@@ -129,6 +132,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnSimpan"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
