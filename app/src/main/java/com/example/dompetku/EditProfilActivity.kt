@@ -124,6 +124,7 @@ class EditProfilActivity : AppCompatActivity() {
                             .setMessage("Update data berhasil!")
                             .setPositiveButton("OK") { dialog, which ->
                                 dialog.dismiss()
+                                finish()
                             }
                             .show()
                     }

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -31,6 +32,7 @@ class RiwayatFragment : Fragment() {
     private lateinit var dataRiwayat : ArrayList<DataRiwayat>
     private lateinit var sessionManager: SessionManager
     private lateinit var shimmer: ShimmerFrameLayout
+    private lateinit var swipe: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,16 +44,19 @@ class RiwayatFragment : Fragment() {
         dataRiwayat = ArrayList<DataRiwayat>()
         sessionManager = SessionManager(activity)
         shimmer = view.findViewById(R.id.shimmer)
-
-        // get data
-        shimmer.visibility = View.VISIBLE
-        shimmer.startShimmer()
+        swipe = view.findViewById(R.id.swipe)
 
         getTransactions()
+        swipe.setOnRefreshListener {
+            dataRiwayat.clear()
+            getTransactions()
+            swipe.isRefreshing = false
+        }
         return view
     }
 
     private fun getTransactions() {
+        startShimmer()
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/transaction")
@@ -79,10 +84,9 @@ class RiwayatFragment : Fragment() {
 
                             recyclerView.layoutManager = LinearLayoutManager(activity)
                             recyclerView.adapter = activity?.let { AdapterRiwayat(it, dataRiwayat) }
-
-                            shimmer.visibility = View.GONE
-                            shimmer.startShimmer()
                         }
+
+                        stopShimmer()
                     }
                 }
 
@@ -96,5 +100,15 @@ class RiwayatFragment : Fragment() {
                     }
                 }
             })
+    }
+
+    private fun startShimmer() {
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
+    }
+
+    private fun stopShimmer() {
+        shimmer.visibility = View.GONE
+        shimmer.stopShimmer()
     }
 }

@@ -10,10 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dompetku.CheckOutActivity
-import com.example.dompetku.DetailTransferActivity
-import com.example.dompetku.R
-import com.example.dompetku.SessionManager
+import com.example.dompetku.*
 import com.example.dompetku.dataclass.DataHome
 import com.squareup.picasso.Picasso
 import java.text.DecimalFormat
@@ -60,6 +57,11 @@ class AdapterHome(val context: Context, val homeList: ArrayList<DataHome>): Recy
                 ContextCompat.startActivity(context, intent, null)
             } else if(currentItem.type == "Transfer") {
                 val intent = Intent(context, DetailTransferActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                ContextCompat.startActivity(context, intent, null)
+            }
+            else if(currentItem.type == "Withdraw") {
+                val intent = Intent(context, DetailWithdrawActivity::class.java)
                 intent.putExtra("id", currentItem.id)
                 ContextCompat.startActivity(context, intent, null)
             }

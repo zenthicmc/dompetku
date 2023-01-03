@@ -10,10 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dompetku.CheckOutActivity
-import com.example.dompetku.DetailTransferActivity
-import com.example.dompetku.R
-import com.example.dompetku.SessionManager
+import com.example.dompetku.*
 import com.example.dompetku.dataclass.DataHome
 import com.example.dompetku.dataclass.DataRiwayat
 import com.squareup.picasso.Picasso
@@ -62,6 +59,11 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
             }
             else if(currentItem.type == "Transfer") {
                 val intent = Intent(context, DetailTransferActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                startActivity(context, intent, null)
+            }
+            else if(currentItem.type == "Withdraw") {
+                val intent = Intent(context, DetailWithdrawActivity::class.java)
                 intent.putExtra("id", currentItem.id)
                 startActivity(context, intent, null)
             }

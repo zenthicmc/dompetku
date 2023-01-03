@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -31,6 +32,7 @@ class NotifikasiFragment : Fragment() {
     private lateinit var dataNotifikasi : ArrayList<DataNotifikasi>
     private lateinit var sessionManager: SessionManager
     private lateinit var shimmer: ShimmerFrameLayout
+    private lateinit var swipe: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,17 +45,20 @@ class NotifikasiFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerNotifikasi)
         dataNotifikasi = ArrayList<DataNotifikasi>()
         shimmer = view.findViewById(R.id.shimmer)
-
-        // get data
-        shimmer.visibility = View.VISIBLE
-        shimmer.startShimmer()
+        swipe = view.findViewById(R.id.swipe)
 
         getNotifications()
+        swipe.setOnRefreshListener {
+            dataNotifikasi.clear()
+            getNotifications()
+            swipe.isRefreshing = false
+        }
 
         return view
     }
 
     private fun getNotifications() {
+        startShimmer()
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/notification")
@@ -81,10 +86,9 @@ class NotifikasiFragment : Fragment() {
 
                             recyclerView.layoutManager = LinearLayoutManager(activity)
                             recyclerView.adapter = activity?.let { AdapterNotifikasi(it, dataNotifikasi) }
-
-                            shimmer.visibility = View.GONE
-                            shimmer.startShimmer()
                         }
+
+                        stopShimmer()
                     }
                 }
 
@@ -98,5 +102,15 @@ class NotifikasiFragment : Fragment() {
                     }
                 }
             })
+    }
+
+    private fun startShimmer() {
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
+    }
+
+    private fun stopShimmer() {
+        shimmer.visibility = View.GONE
+        shimmer.startShimmer()
     }
 }

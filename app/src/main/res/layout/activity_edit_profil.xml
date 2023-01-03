@@ -66,6 +66,7 @@
             android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="Kaesang Pengarep"/>
         <TextView
             android:layout_width="wrap_content"
@@ -78,6 +79,7 @@
             android:id="@+id/editNomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="0821245645747"/>
 
         <TextView
@@ -90,6 +92,7 @@
             android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="kaesang@gmail.com" />
 
         <Button

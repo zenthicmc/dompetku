@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -45,6 +46,7 @@ class HomeFragment : Fragment() {
     private lateinit var shimmer3: ShimmerFrameLayout
     private lateinit var home: LinearLayout
     private lateinit var welcome: RelativeLayout
+    private lateinit var swipe: SwipeRefreshLayout
 
     // Menu topup & tagihan
     private lateinit var btnListrik: LinearLayout
@@ -72,6 +74,7 @@ class HomeFragment : Fragment() {
         shimmer3 = view.findViewById(R.id.shimmer3)
         home = view.findViewById(R.id.home)
         welcome = view.findViewById(R.id.welcome)
+        swipe = view.findViewById(R.id.swipe)
 
         // Menu topup & tagihan
         btnListrik = view.findViewById(R.id.btnListrik)
@@ -105,21 +108,6 @@ class HomeFragment : Fragment() {
             topupTagihan("pulsa")
         }
 
-        // get current data user
-        shimmer.visibility = View.VISIBLE
-        shimmer.startShimmer()
-
-        shimmer2.visibility = View.VISIBLE
-        shimmer2.startShimmer()
-
-        shimmer3.visibility = View.VISIBLE
-        shimmer3.startShimmer()
-
-        home.visibility = View.GONE
-        welcome.visibility = View.GONE
-
-        getData()
-
         btnDeposit = view.findViewById(R.id.btnDeposit)
         btnDeposit.setOnClickListener {
             val intent = Intent(activity, DepositActivity::class.java)
@@ -138,6 +126,13 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        swipe.setOnRefreshListener {
+            dataHome.clear()
+            getData()
+            swipe.isRefreshing = false
+        }
+
+        getData()
         return view
     }
 
@@ -149,6 +144,7 @@ class HomeFragment : Fragment() {
 
 
     private fun getData() {
+        startShimmer()
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/getprofile")
@@ -168,18 +164,7 @@ class HomeFragment : Fragment() {
                         setProfile(user)
                         setTransactions(transactions)
 
-                        // stop shimmer
-                        shimmer.stopShimmer()
-                        shimmer.visibility = View.GONE
-
-                        shimmer2.stopShimmer()
-                        shimmer2.visibility = View.GONE
-
-                        shimmer3.stopShimmer()
-                        shimmer3.visibility = View.GONE
-
-                        home.visibility = View.VISIBLE
-                        welcome.visibility = View.VISIBLE
+                        stopShimmer()
                     }
                 }
 
@@ -225,5 +210,33 @@ class HomeFragment : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(activity)
             recyclerView.adapter = activity?.let { AdapterHome(it, dataHome) }
         }
+    }
+
+    private fun startShimmer() {
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
+
+        shimmer2.visibility = View.VISIBLE
+        shimmer2.startShimmer()
+
+        shimmer3.visibility = View.VISIBLE
+        shimmer3.startShimmer()
+
+        home.visibility = View.GONE
+        welcome.visibility = View.GONE
+    }
+
+    private fun stopShimmer() {
+        shimmer.stopShimmer()
+        shimmer.visibility = View.GONE
+
+        shimmer2.stopShimmer()
+        shimmer2.visibility = View.GONE
+
+        shimmer3.stopShimmer()
+        shimmer3.visibility = View.GONE
+
+        home.visibility = View.VISIBLE
+        welcome.visibility = View.VISIBLE
     }
 }

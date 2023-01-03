@@ -1,70 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragment.RiwayatFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:paddingHorizontal="25dp"
-        android:paddingVertical="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Riwayat Transaksi"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textSize="16sp"/>
-    </LinearLayout>
-
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginTop="15dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragment.RiwayatFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="20dp"
+            android:orientation="horizontal">
 
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-            <include layout="@layout/card_shimmer"/>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Riwayat Transaksi"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textSize="16sp"/>
         </LinearLayout>
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerRiwayat"
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="1dp"
-            android:layout_marginHorizontal="2dp"
-            tools:listitem="@layout/card_riwayat_transaksi"
-            android:gravity="center_vertical"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="15dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+                <include layout="@layout/card_shimmer"/>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRiwayat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="1dp"
+                android:layout_marginHorizontal="2dp"
+                tools:listitem="@layout/card_riwayat_transaksi"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

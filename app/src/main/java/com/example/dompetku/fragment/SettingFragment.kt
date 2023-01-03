@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -38,6 +39,7 @@ class SettingFragment : Fragment() {
     private lateinit var shimmer2: ShimmerFrameLayout
     private lateinit var profile: LinearLayout
     private lateinit var stats: RelativeLayout
+    private lateinit var swipe: SwipeRefreshLayout
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -58,19 +60,16 @@ class SettingFragment : Fragment() {
         shimmer2 = view.findViewById(R.id.shimmer2)
         profile = view.findViewById(R.id.profile)
         stats = view.findViewById(R.id.stats)
-
-        // start shimmer
-        shimmer1.visibility = View.VISIBLE
-        shimmer1.startShimmer()
-
-        shimmer2.visibility = View.VISIBLE
-        shimmer2.startShimmer()
-
-        profile.visibility = View.GONE
-        stats.visibility = View.GONE
+        swipe = view.findViewById(R.id.swipe)
 
         getUserProfile()
         getUserStats()
+
+        swipe.setOnRefreshListener {
+            getUserProfile()
+            getUserStats()
+            swipe.isRefreshing = false
+        }
 
         btnEditProdil = view.findViewById(R.id.btnEditProfil)
         btnTentangKami = view.findViewById(R.id.btnTentangKami)
@@ -93,7 +92,14 @@ class SettingFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        getUserProfile()
+        getUserStats()
+    }
+
     private fun getUserProfile() {
+        startShimmer()
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/getprofile")
@@ -111,15 +117,7 @@ class SettingFragment : Fragment() {
                     if(response.getString("success").equals("true")) {
                         setProfile(user)
 
-                        // stop shimmer
-                        shimmer1.visibility = View.GONE
-                        shimmer1.stopShimmer()
-
-                        shimmer2.visibility = View.GONE
-                        shimmer2.stopShimmer()
-
-                        profile.visibility = View.VISIBLE
-                        stats.visibility = View.VISIBLE
+                        stopShimmer()
                     }
                 }
 
@@ -136,6 +134,7 @@ class SettingFragment : Fragment() {
     }
 
     private fun getUserStats() {
+        startShimmer()
         val token = sessionManager.getToken()
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/getstats")
@@ -152,6 +151,8 @@ class SettingFragment : Fragment() {
                         val decimalFormat = DecimalFormat("#,###")
                         txtUangMasuk.text = "Rp. ${decimalFormat.format(data.getInt("uangMasuk"))}"
                         txtUangKeluar.text = "Rp. ${decimalFormat.format(data.getInt("uangKeluar"))}"
+
+                        stopShimmer()
                     }
                 }
 
@@ -171,4 +172,25 @@ class SettingFragment : Fragment() {
             .into(photoProfile)
     }
 
+    private fun startShimmer() {
+        shimmer1.visibility = View.VISIBLE
+        shimmer1.startShimmer()
+
+        shimmer2.visibility = View.VISIBLE
+        shimmer2.startShimmer()
+
+        profile.visibility = View.GONE
+        stats.visibility = View.GONE
+    }
+
+    private fun stopShimmer() {
+        shimmer1.visibility = View.GONE
+        shimmer1.stopShimmer()
+
+        shimmer2.visibility = View.GONE
+        shimmer2.stopShimmer()
+
+        profile.visibility = View.VISIBLE
+        stats.visibility = View.VISIBLE
+    }
 }
