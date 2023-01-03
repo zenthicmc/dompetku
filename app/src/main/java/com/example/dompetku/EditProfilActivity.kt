@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -26,6 +28,11 @@ class EditProfilActivity : AppCompatActivity() {
     private lateinit var editNomor : EditText
     private lateinit var editEmail : EditText
     private lateinit var btnSimpan : Button
+    private lateinit var radioMale : RadioButton
+    private lateinit var radioFemale : RadioButton
+    private lateinit var radioGroup : RadioGroup
+    private lateinit var idUser : String
+    private lateinit var jenisKelamin : String
 
 
     @SuppressLint("MissingInflatedId")
@@ -39,23 +46,37 @@ class EditProfilActivity : AppCompatActivity() {
         editNomor = findViewById(R.id.editNomor)
         editEmail = findViewById(R.id.editEmail)
         btnSimpan = findViewById(R.id.btnSimpan)
+        radioMale = findViewById(R.id.radioMale)
+        radioFemale = findViewById(R.id.radioFemale)
+        radioGroup = findViewById(R.id.radioKelamin)
+
+        jenisKelamin = ""
+
 
         btnSimpan.setOnClickListener{
             val name = editName.text.toString().trim()
             val hp = editNomor.text.toString().trim()
             val email = editEmail.text.toString().trim()
 
+
+            val kelamin = radioGroup.checkedRadioButtonId.toString()
+            if (kelamin == "radioFemale"){
+                 jenisKelamin = "Female"
+            } else if(kelamin == "radioMale"){
+                 jenisKelamin = "Male"
+            }
+
             if (name.isEmpty()) {
                 editName.error = "Nomor HP tidak boleh kosong"
                 editName.requestFocus()
             } else if (hp.isEmpty()) {
-                editNomor.error = "Password tidak boleh kosong"
+                editNomor.error = "No hp tidak boleh kosong"
                 editNomor.requestFocus()
             } else if (email.isEmpty()) {
-                editEmail.error = "Password tidak boleh kosong"
+                editEmail.error = "Email tidak boleh kosong"
                 editEmail.requestFocus()
             } else {
-                updateUser(name, hp, email)
+                updateUser(name, hp, email, jenisKelamin)
             }
             finish()
         }
@@ -82,6 +103,7 @@ class EditProfilActivity : AppCompatActivity() {
 
                     if(response.getString("success").equals("true")) {
                         setProfile(user)
+                        idUser = user.getString("_id")
                     }
                 }
 
@@ -95,6 +117,13 @@ class EditProfilActivity : AppCompatActivity() {
         editName.setText(user.getString("name"))
         editNomor.setText(user.getString("nohp"))
         editEmail.setText(user.getString("email"))
+        val kelamin = user.getString("kelamin")
+
+        if (kelamin == "Female"){
+            radioGroup.check(R.id.radioFemale)
+        } else if(kelamin == "Male"){
+            radioGroup.check(R.id.radioMale)
+        }
 
         // load image
         Picasso.get()
@@ -102,24 +131,29 @@ class EditProfilActivity : AppCompatActivity() {
             .into(photoProfil)
     }
 
-    private fun updateUser(name: String, nohp: String, email: String) {
+    private fun updateUser(name: String, nohp: String, email: String,kelamin : String ) {
         sessionManager = SessionManager(this)
-        AndroidNetworking.put("https://dompetku-api.vercel.app/api/auth/login")
+        AndroidNetworking.put("https://dompetku-api.vercel.app/api/user/{$idUser}")
             .setTag("register")
             .setPriority(Priority.MEDIUM)
             .addBodyParameter("name", name)
             .addBodyParameter("nohp", nohp)
             .addBodyParameter("email", email)
+            .addBodyParameter("kelamin",kelamin)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
                     Log.d("response Update User", response.toString())
                     val data = response.getJSONObject("data")
-                    if(response.getString("success").equals("true"))
-                        intent.putExtra("name", data.getString("name"))
-                        intent.putExtra("nohp", data.getString("nohp"))
-                        intent.putExtra("email", data.getString("email"))
-                        startActivity(intent)
+                    if(response.getString("success").equals("true")) {
+                        MaterialAlertDialogBuilder(this@EditProfilActivity)
+                            .setTitle("Login Gagal")
+                            .setMessage("Update data berhasil!!")
+                            .setPositiveButton("OK") { dialog, which ->
+                                dialog.dismiss()
+                            }
+                            .show()
+                    }
 
                 }
 
