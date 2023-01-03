@@ -94,6 +94,10 @@ class DepositActivity : AppCompatActivity() {
                 editAmount.error = "Amount is required"
                 editAmount.requestFocus()
                 return@setOnClickListener
+            } else if (editAmount.text.toString().trim().length > 1000000) {
+                editAmount.error = "Maximum amount is 1.000.000"
+                editAmount.requestFocus()
+                return@setOnClickListener
             } else {
                 requestDeposit(code, editAmount.text.toString())
             }
@@ -147,6 +151,11 @@ class DepositActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@DepositActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

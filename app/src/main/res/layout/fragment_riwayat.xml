@@ -25,6 +25,32 @@
             android:textSize="16sp"/>
     </LinearLayout>
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+            <include layout="@layout/card_shimmer"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

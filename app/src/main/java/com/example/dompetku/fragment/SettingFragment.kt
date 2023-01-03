@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.androidnetworking.AndroidNetworking
@@ -16,6 +17,7 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.example.dompetku.*
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import org.w3c.dom.Text
@@ -32,6 +34,10 @@ class SettingFragment : Fragment() {
     private lateinit var btnEditProdil: RelativeLayout
     private lateinit var btnTentangKami: RelativeLayout
     private lateinit var btnLogout: RelativeLayout
+    private lateinit var shimmer1: ShimmerFrameLayout
+    private lateinit var shimmer2: ShimmerFrameLayout
+    private lateinit var profile: LinearLayout
+    private lateinit var stats: RelativeLayout
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -47,6 +53,21 @@ class SettingFragment : Fragment() {
         txtHp = view.findViewById(R.id.txtHp)
         txtUangMasuk = view.findViewById(R.id.txtUangMasuk)
         txtUangKeluar = view.findViewById(R.id.txtUangKeluar)
+
+        shimmer1 = view.findViewById(R.id.shimmer1)
+        shimmer2 = view.findViewById(R.id.shimmer2)
+        profile = view.findViewById(R.id.profile)
+        stats = view.findViewById(R.id.stats)
+
+        // start shimmer
+        shimmer1.visibility = View.VISIBLE
+        shimmer1.startShimmer()
+
+        shimmer2.visibility = View.VISIBLE
+        shimmer2.startShimmer()
+
+        profile.visibility = View.GONE
+        stats.visibility = View.GONE
 
         getUserProfile()
         getUserStats()
@@ -89,11 +110,27 @@ class SettingFragment : Fragment() {
 
                     if(response.getString("success").equals("true")) {
                         setProfile(user)
+
+                        // stop shimmer
+                        shimmer1.visibility = View.GONE
+                        shimmer1.stopShimmer()
+
+                        shimmer2.visibility = View.GONE
+                        shimmer2.stopShimmer()
+
+                        profile.visibility = View.VISIBLE
+                        stats.visibility = View.VISIBLE
                     }
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

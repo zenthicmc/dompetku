@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".DetailTransaksiActivity">
+    tools:context=".DetailTransferActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detail Transaksi"
+            android:text="Detail Transfer"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:textSize="17sp"/>
@@ -42,6 +42,7 @@
         android:src="@drawable/profil_placeholder"/>
 
     <TextView
+        android:id="@+id/txtAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
@@ -52,6 +53,7 @@
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/txtSender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -61,6 +63,7 @@
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/txtSenderPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -89,6 +92,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:paddingEnd="15dp">
 
         <TextView
@@ -98,17 +102,11 @@
             android:textSize="14sp"
             android:textColor="@color/primary" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_bri"
-            android:layout_toLeftOf="@+id/txtBankBRI"/>
 
         <TextView
-            android:id="@+id/txtBankBRI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank BRI"
+            android:text="Saldo"
             android:textSize="14sp"
             android:textColor="@color/primary"
             android:layout_alignParentRight="true"/>
@@ -129,6 +127,7 @@
             android:textColor="@color/primary" />
 
         <TextView
+            android:id="@+id/txtStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Berhasil"
@@ -152,6 +151,7 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/txtDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10.30"
@@ -159,29 +159,5 @@
             android:textColor="@color/primary"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp"
-        android:paddingEnd="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tanggal"
-            android:textSize="14sp"
-            android:textColor="@color/primary" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12 Nov 2022"
-            android:textSize="14sp"
-            android:textColor="@color/primary"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
-
 
 </LinearLayout>

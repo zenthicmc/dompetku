@@ -83,6 +83,11 @@ class MetodeActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@MetodeActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

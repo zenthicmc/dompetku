@@ -1,5 +1,6 @@
 package com.example.dompetku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.Data
 import android.util.Log
@@ -13,12 +14,14 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.example.dompetku.LoginActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.adapter.AdapterHome
 import com.example.dompetku.adapter.AdapterRiwayat
 import com.example.dompetku.dataclass.DataHome
 import com.example.dompetku.dataclass.DataRiwayat
+import com.facebook.shimmer.ShimmerFrameLayout
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -27,6 +30,7 @@ class RiwayatFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataRiwayat : ArrayList<DataRiwayat>
     private lateinit var sessionManager: SessionManager
+    private lateinit var shimmer: ShimmerFrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +41,11 @@ class RiwayatFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerRiwayat)
         dataRiwayat = ArrayList<DataRiwayat>()
         sessionManager = SessionManager(activity)
+        shimmer = view.findViewById(R.id.shimmer)
+
+        // get data
+        shimmer.visibility = View.VISIBLE
+        shimmer.startShimmer()
 
         getTransactions()
         return view
@@ -70,12 +79,21 @@ class RiwayatFragment : Fragment() {
 
                             recyclerView.layoutManager = LinearLayoutManager(activity)
                             recyclerView.adapter = activity?.let { AdapterRiwayat(it, dataRiwayat) }
+
+                            shimmer.visibility = View.GONE
+                            shimmer.startShimmer()
                         }
                     }
                 }
 
                 override fun onError(error: ANError) {
-                    Log.d("error", error.toString())
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }

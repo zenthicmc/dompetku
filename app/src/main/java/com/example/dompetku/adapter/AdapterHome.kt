@@ -2,12 +2,16 @@ package com.example.dompetku.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dompetku.CheckOutActivity
+import com.example.dompetku.DetailTransferActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.dataclass.DataHome
@@ -29,9 +33,12 @@ class AdapterHome(val context: Context, val homeList: ArrayList<DataHome>): Recy
         val currentItem = homeList[position]
         val decimalFormat = DecimalFormat("#,###")
 
+        // format date to dd-mm-yyyy HH:mm
+        val date = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4) + " " + currentItem.date.substring(11,16)
+
         holder.txtType.text = currentItem.type
         holder.txtAmount.text = "Rp " + decimalFormat.format(currentItem.amount).toString()
-        holder.txtDate.text = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4)
+        holder.txtDate.text = date
         holder.txtStatus.text = currentItem.status
 
         // load icon
@@ -44,6 +51,18 @@ class AdapterHome(val context: Context, val homeList: ArrayList<DataHome>): Recy
             "Success" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.green2))
             "Pending" -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.orange))
             else -> holder.txtStatus.setTextColor(context.resources.getColor(R.color.red))
+        }
+
+        holder.itemView.setOnClickListener {
+            if(currentItem.type == "Deposit") {
+                val intent = Intent(context, CheckOutActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                ContextCompat.startActivity(context, intent, null)
+            } else if(currentItem.type == "Transfer") {
+                val intent = Intent(context, DetailTransferActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                ContextCompat.startActivity(context, intent, null)
+            }
         }
     }
 

@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dompetku.CheckOutActivity
+import com.example.dompetku.DetailTransferActivity
 import com.example.dompetku.R
 import com.example.dompetku.SessionManager
 import com.example.dompetku.dataclass.DataHome
@@ -33,9 +34,12 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
         val currentItem = riwayatList[position]
         val decimalFormat = DecimalFormat("#,###")
 
+        // format date to dd-mm-yyyy HH:mm
+        val date = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4) + " " + currentItem.date.substring(11,16)
+
         holder.txtType.text = currentItem.type
         holder.txtAmount.text = "Rp " + decimalFormat.format(currentItem.amount).toString()
-        holder.txtDate.text = currentItem.date.substring(8,10) + "-" + currentItem.date.substring(5,7) + "-" + currentItem.date.substring(0,4)
+        holder.txtDate.text = date
         holder.txtStatus.text = currentItem.status
 
         // load icon
@@ -51,8 +55,13 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
         }
 
         holder.itemView.setOnClickListener {
-            if(currentItem.type == "Deposit" && currentItem.status == "Pending") {
+            if(currentItem.type == "Deposit") {
                 val intent = Intent(context, CheckOutActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                startActivity(context, intent, null)
+            }
+            else if(currentItem.type == "Transfer") {
+                val intent = Intent(context, DetailTransferActivity::class.java)
                 intent.putExtra("id", currentItem.id)
                 startActivity(context, intent, null)
             }

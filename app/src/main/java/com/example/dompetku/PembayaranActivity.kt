@@ -44,7 +44,7 @@ class PembayaranActivity : AppCompatActivity() {
         val type = intent.getStringExtra("type")
         if(type.equals("data") || type.equals("pulsa") || type.equals("etoll")) {
             txtKet.text = "Masukkan Nomor Penerima"
-            txtHelper.text = "*Nomor penerima harus valid sesuai dengan operator yang dipilih"
+            txtHelper.text = "*Nomor penerima harus terdaftar sesuai dengan operator yang dipilih"
         } else {
             txtKet.text = "Masukkan Customer ID"
             txtHelper.text = ""
@@ -107,6 +107,11 @@ class PembayaranActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@PembayaranActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             })
     }
