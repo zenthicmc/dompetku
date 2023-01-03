@@ -22,6 +22,7 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
     private lateinit var txtPhone: TextView
     private lateinit var txtAmount: TextView
     private lateinit var txtCatatan: TextView
+    private lateinit var txtSaldo: TextView
     private lateinit var photoProfile: ImageView
     private lateinit var btnSend: TextView
 
@@ -35,6 +36,7 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
         txtPhone = findViewById(R.id.txtPhone)
         txtAmount = findViewById(R.id.txtAmount)
         txtCatatan = findViewById(R.id.txtCatatan)
+        txtSaldo = findViewById(R.id.txtSaldo)
         photoProfile = findViewById(R.id.photoProfile)
         btnSend = findViewById(R.id.btnSend)
 
@@ -55,7 +57,48 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
             transfer(nohp, amount, catatan)
         }
 
+        getCurrentUser()
         getUser(nohp)
+    }
+
+    private fun getCurrentUser() {
+        val token = sessionManager.getToken()
+        val decimalFormat = DecimalFormat("#,###")
+
+        AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/getprofile")
+            .addHeaders("Authorization", "Bearer $token")
+            .setTag("current")
+            .setPriority(Priority.LOW)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject) {
+                    Log.d("response detail", response.toString())
+                    val data: JSONObject = response.getJSONObject("data")
+                    val user: JSONObject = data.getJSONObject("user")
+
+                    if(response.getString("success").equals("true")) {
+                        txtSaldo.text = "Rp " + decimalFormat.format(user.getString("saldo").toBigInteger()).toString()
+                    }
+                }
+
+                override fun onError(error: ANError) {
+                    val error = error.errorBody
+                    val jsonObject = JSONObject(error)
+
+                    MaterialAlertDialogBuilder(this@KonfirmasiTransferActivity)
+                        .setTitle("Gagal")
+                        .setMessage(jsonObject.getString("message"))
+                        .setPositiveButton("OK") { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+
+                    if(jsonObject.getString("code").equals("401")) {
+                        val intent = Intent(this@KonfirmasiTransferActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            })
     }
 
     private fun getUser(phone: String) {
@@ -63,7 +106,7 @@ class KonfirmasiTransferActivity : AppCompatActivity() {
 
         AndroidNetworking.get("https://dompetku-api.vercel.app/api/user/phone/${phone}")
             .addHeaders("Authorization", "Bearer $token")
-            .setTag("recents")
+            .setTag("receiver")
             .setPriority(Priority.LOW)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {

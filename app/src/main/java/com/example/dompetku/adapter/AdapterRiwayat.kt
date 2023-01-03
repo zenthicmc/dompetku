@@ -67,6 +67,11 @@ class AdapterRiwayat(val context: Context, val riwayatList: ArrayList<DataRiwaya
                 intent.putExtra("id", currentItem.id)
                 startActivity(context, intent, null)
             }
+            else if(currentItem.type == "Topup") {
+                val intent = Intent(context, DetailTopupActivity::class.java)
+                intent.putExtra("id", currentItem.id)
+                startActivity(context, intent, null)
+            }
         }
     }
 

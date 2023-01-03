@@ -16,37 +16,37 @@ import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import java.text.DecimalFormat
 
-class DetailWithdrawActivity : AppCompatActivity() {
+class DetailTopupActivity : AppCompatActivity() {
     private lateinit var btnBack: ImageView
     private lateinit var photoProfile: ImageView
     private lateinit var txtAmount: TextView
     private lateinit var txtStatus: TextView
     private lateinit var txtDate: TextView
-    private lateinit var txtRek: TextView
     private lateinit var txtId: TextView
+    private lateinit var txtProduct: TextView
     private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_withdraw)
+        setContentView(R.layout.activity_detail_topup)
 
         btnBack = findViewById(R.id.btnBack)
         photoProfile = findViewById(R.id.photoProfile)
         txtAmount = findViewById(R.id.txtAmount)
         txtStatus = findViewById(R.id.txtStatus)
         txtDate = findViewById(R.id.txtDate)
-        txtRek = findViewById(R.id.txtRek)
         txtId = findViewById(R.id.txtId)
+        txtProduct = findViewById(R.id.txtProduct)
         sessionManager = SessionManager(this)
 
         btnBack.setOnClickListener {
             finish()
         }
 
-        requestDetailWithdraw(this)
+        requestDetailTopup(this)
     }
 
-    private fun requestDetailWithdraw(context: Context) {
+    private fun requestDetailTopup(context: Context) {
         val id = intent.getStringExtra("id")
         val token = sessionManager.getToken()
         val decimalFormat = DecimalFormat("#,###")
@@ -58,7 +58,7 @@ class DetailWithdrawActivity : AppCompatActivity() {
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
-                    Log.d("response deposit", response.toString())
+                    Log.d("response topup", response.toString())
                     val data = response.getJSONObject("data")
                     val receiver = data.getJSONObject("receiver")
                     val date = data.getString("createdAt")
@@ -67,11 +67,11 @@ class DetailWithdrawActivity : AppCompatActivity() {
                         // format date to dd-mm-yyyy HH:mm
                         val formatedDate = date.substring(8,10) + "-" + date.substring(5,7) + "-" + date.substring(0,4) + " " + date.substring(11,16)
 
-                        txtId.text = data.getString("_id")
+                        txtId.text = data.getString("reference")
+                        txtProduct.text = data.getString("product_code")
                         txtAmount.text = "Rp " + decimalFormat.format(data.getInt("amount")).toString()
                         txtStatus.text = data.getString("status")
                         txtDate.text = formatedDate
-                        txtRek.text = data.getString("rekening")
 
                         Picasso.get()
                             .load(receiver.getString("image"))
@@ -83,7 +83,7 @@ class DetailWithdrawActivity : AppCompatActivity() {
                     val error = error.errorBody
                     val jsonObject = JSONObject(error)
 
-                    MaterialAlertDialogBuilder(this@DetailWithdrawActivity)
+                    MaterialAlertDialogBuilder(this@DetailTopupActivity)
                         .setTitle("Gagal")
                         .setMessage(jsonObject.getString("message"))
                         .setPositiveButton("OK") { dialog, which ->
@@ -92,7 +92,7 @@ class DetailWithdrawActivity : AppCompatActivity() {
                         .show()
 
                     if(jsonObject.getString("code").equals("401")) {
-                        val intent = Intent(this@DetailWithdrawActivity, LoginActivity::class.java)
+                        val intent = Intent(this@DetailTopupActivity, LoginActivity::class.java)
                         startActivity(intent)
                     }
                 }

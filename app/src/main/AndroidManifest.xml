@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Dompetku"
         tools:targetApi="31">
         <activity
+            android:name=".DetailTopupActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DetailWithdrawActivity"
             android:exported="false">
             <meta-data
@@ -26,7 +33,7 @@
             android:name=".firebase.PushNotificationService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 

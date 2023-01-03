@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".DetailWithdrawActivity">
+    tools:context=".DetailTopupActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detail Tarik Tunai"
+            android:text="Detail Topup"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:textSize="17sp"/>
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="63b3e80ec57109fb5d7cee44"
+        android:text="REF-1671951297130"
         android:textColor="@color/primary"
         android:textSize="14sp"
         android:layout_gravity="center"/>
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
-        android:text="Rincian Tarik Tunai"
+        android:text="Rincian Topup"
         android:textStyle="bold"
         android:textColor="@color/primary"
         android:textSize="16sp" />
@@ -88,14 +88,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Metode Pembayaran"
+            android:text="Produk"
             android:textSize="14sp"
             android:textColor="@color/primary" />
 
         <TextView
+            android:id="@+id/txtProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Saldo"
+            android:text="Diamond Mobile Legend"
             android:textSize="14sp"
             android:textColor="@color/primary"
             android:layout_alignParentRight="true"/>
@@ -111,15 +112,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No Rekening Tujuan"
+            android:text="Metode Pembayaran"
             android:textSize="14sp"
             android:textColor="@color/primary" />
 
         <TextView
-            android:id="@+id/txtRek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0712434 3434"
+            android:text="Saldo"
             android:textSize="14sp"
             android:textColor="@color/primary"
             android:layout_alignParentRight="true"/>
