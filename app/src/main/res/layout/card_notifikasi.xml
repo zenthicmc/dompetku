@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="18dp"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal">
 
@@ -29,6 +30,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Token Berhasil Dibuat"
@@ -38,11 +40,12 @@
                 android:textSize="14sp"/>
 
             <TextView
+                android:id="@+id/txtDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
                 android:text="Lorem sdgvdsivf hsdvfhdus hvfudsh fvidshfiv huhudshfuhsduhfudshfihsdusdkjbhfkjndasd..."
-                android:textSize="12sp"
-                android:textColor="@color/primary"/>
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,10 +56,11 @@
             android:layout_marginStart="18dp">
 
             <TextView
+                android:id="@+id/txtDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="29 Okt 2022"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
         </LinearLayout>
     </RelativeLayout>
 

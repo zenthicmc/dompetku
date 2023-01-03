@@ -43,10 +43,10 @@ class RiwayatFragment : Fragment() {
         sessionManager = SessionManager(activity)
         shimmer = view.findViewById(R.id.shimmer)
 
-
         // get data
         shimmer.visibility = View.VISIBLE
         shimmer.startShimmer()
+
         getTransactions()
         return view
     }

@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="13dp"
         android:layout_marginTop="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -33,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="Deposit"
                 android:layout_marginBottom="4sp"
-                android:textColor="@color/black"
+                android:textColor="@color/primary"
                 android:textStyle="bold"
                 android:textSize="14sp"/>
 

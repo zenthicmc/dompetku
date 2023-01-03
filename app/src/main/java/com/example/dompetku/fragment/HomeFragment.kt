@@ -117,6 +117,7 @@ class HomeFragment : Fragment() {
 
         home.visibility = View.GONE
         welcome.visibility = View.GONE
+
         getData()
 
         btnDeposit = view.findViewById(R.id.btnDeposit)
