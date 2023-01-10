@@ -8,7 +8,7 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 
 ---
 
-## Key Features
+## 🖲️ Key Features
 - Deposit
 - Transfer Sesama Pengguna
 - Withdraw
@@ -18,12 +18,14 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 - Patungan [Coming soon]
 
 ---
-## Download
-Lorem ipsum
-
+## 🧑‍🤝‍🧑 Contributos
+- Jagad Raya R : Project Lead, Backend Developer, & Android Developer
+- Hilmi Haidar Ali : UI Designer
+- Dava Alhaq NA : Android Developer
+- M. Alvin Ath Thaariq : Tester & Secretary 
 ---
 
-## License
+## 🔒 License
 >You can check out the full license [here](https://github.com/zenthicmc/dompetku/blob/main/LICENSE.md)
 
 This project is licensed under the terms of the **CC0-1.0** license.
