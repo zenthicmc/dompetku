@@ -18,7 +18,7 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 - Patungan [Coming soon]
 
 ---
-## 🧑‍🤝‍🧑 Contributos
+## 🧑‍🤝‍🧑 Contributors
 - Jagad Raya R : Project Lead, Backend Developer, & Android Developer
 - Hilmi Haidar Ali : UI Designer
 - Dava Alhaq NA : Android Developer
