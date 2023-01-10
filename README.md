@@ -8,7 +8,7 @@ Dompetku adalah aplikasi dompet digital masa kini yang dibangun menggunakan kotl
 
 ---
 
-## 🖲️ Key Features
+## 🖲️ Features
 - Deposit
 - Transfer Sesama Pengguna
 - Withdraw
